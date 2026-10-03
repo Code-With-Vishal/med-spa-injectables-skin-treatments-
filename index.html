@@ -1,0 +1,2227 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Velour Aesthetics</title>
+<meta name="description" content="Velour Aesthetics, Scottsdale. Medical-grade skin treatments planned by a nurse injector. Book a free consult and take home a written plan with every cost.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;500;600;700&family=Gloock&display=swap">
+<script>
+  (function () {
+    var d = document.documentElement;
+    d.classList.add('js');
+    if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) d.classList.add('reduce');
+  })();
+</script>
+<style>
+/* Layout: one vertical story with two sideways chapters; the 3D serum set lives in framed daylight stages, never behind text */
+:root{
+  --ground:#F7F2EE;     /* warm white page */
+  --paper:#FBF8F5;      /* card surface, a step lighter than the ground */
+  --ink:#221C1E;        /* text and primary buttons */
+  --ink-2:#5B4E51;      /* secondary text, 7:1 on ground */
+  --rose:#C98B7A;       /* rose clay accent */
+  --rose-ink:#8A4F42;   /* rose for small text, 5.7:1 on ground */
+  --glass:#E9DCD6;      /* glass tint panels */
+  --stone:#DCD1CA;      /* stone neutral */
+  --line:rgba(34,28,30,.12);
+  --stage-top:#FAF6F3;
+  --stage-bot:#EADFD9;
+  --f-display:"Gloock","Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+  --f-text:"Albert Sans",system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --nav-h:60px;
+  --gutter:clamp(16px,4vw,48px);
+  --max:1240px;
+  --r-lg:28px; --r-md:20px; --r-sm:12px;
+  --shadow:0 1px 0 rgba(255,255,255,.75) inset,0 22px 44px -28px rgba(110,64,52,.38),0 2px 8px -3px rgba(110,64,52,.14);
+  color-scheme:light;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;background:var(--ground)}
+html.smooth-native{scroll-behavior:smooth}
+html.lenis,html.lenis body{height:auto}
+.lenis.lenis-smooth{scroll-behavior:auto!important}
+.lenis.lenis-smooth [data-lenis-prevent]{overscroll-behavior:contain}
+.lenis.lenis-stopped{overflow:hidden}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--f-text);font-size:1.0625rem;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:clip}
+h1,h2,h3{font-family:var(--f-display);font-weight:400;line-height:1.04;letter-spacing:-.012em;margin:0;text-wrap:balance}
+p,ul,ol,dl,dd,figure{margin:0}
+a{color:inherit}
+button,input,select{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+section[id]{scroll-margin-top:var(--nav-h)}
+.wrap{width:100%;max-width:var(--max);margin-inline:auto;padding-inline:var(--gutter)}
+.eyebrow{font-size:.75rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--rose-ink)}
+.sec-head{display:grid;gap:14px;max-width:46rem}
+.sec-head h2,.steps-head h2,.final h2{font-size:clamp(2.1rem,4.4vw,3.6rem)}
+.sec-head p:not(.eyebrow){color:var(--ink-2);max-width:38rem}
+.verify{display:inline-block;font:600 .66rem/1 var(--f-text);letter-spacing:.06em;color:var(--rose-ink);background:rgba(201,139,122,.16);padding:4px 6px;border-radius:5px;white-space:nowrap;vertical-align:.12em}
+.sr-only{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap}
+.skip{position:absolute;left:12px;top:-60px;z-index:100;background:var(--ink);color:var(--ground);padding:10px 16px;border-radius:999px;text-decoration:none}
+.skip:focus{top:12px}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.65em;min-height:52px;padding:0 1.5rem;border-radius:999px;font-weight:600;font-size:1rem;line-height:1;text-decoration:none;border:0;cursor:pointer;transition:transform .25s cubic-bezier(.2,.8,.2,1.4),box-shadow .25s}
+.btn-primary{background:var(--ink);color:var(--ground);box-shadow:0 12px 26px -14px rgba(34,28,30,.6)}
+.btn-primary::before{content:"";width:9px;height:9px;flex:none;background:var(--rose);border-radius:0 50% 50% 50%;transform:rotate(45deg) translate(1px,1px)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 16px 30px -14px rgba(34,28,30,.65)}
+.btn-primary:active{transform:translateY(0) scale(.98)}
+.btn-quiet{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px rgba(34,28,30,.28)}
+.btn-quiet:hover{box-shadow:inset 0 0 0 1.5px var(--ink)}
+.btn-sm{min-height:42px;padding:0 1.1rem;font-size:.92rem}
+.link-quiet{font-weight:600;text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:5px;text-decoration-color:var(--rose)}
+.link-quiet:hover{text-decoration-color:var(--ink)}
+
+/* nav */
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;height:var(--nav-h);background:rgba(247,242,238,.88);-webkit-backdrop-filter:saturate(1.3) blur(14px);backdrop-filter:saturate(1.3) blur(14px);border-bottom:1px solid var(--line)}
+.nav .wrap{height:100%;display:flex;align-items:center;gap:20px}
+.brand{display:flex;align-items:baseline;gap:.5rem;text-decoration:none;white-space:nowrap}
+.brand b{font-family:var(--f-display);font-weight:400;font-size:1.55rem;letter-spacing:-.01em}
+.brand small{font-size:.66rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-2)}
+.nav nav{margin-left:auto}
+.nav-links{display:flex;gap:2px;list-style:none;margin:0;padding:0}
+.nav-links a{display:block;padding:8px 13px;border-radius:999px;text-decoration:none;font-size:.92rem;font-weight:500;color:var(--ink-2);transition:background .2s,color .2s}
+.nav-links a:hover{color:var(--ink)}
+.nav-links a[aria-current="true"]{color:var(--ink);background:var(--glass)}
+.nav-loc{display:none;margin-left:auto;font-size:.8rem;color:var(--ink-2);font-weight:500}
+@media (max-width:1023px){.nav nav{display:none}.nav-cta{margin-left:auto}}
+@media (max-width:767px){.nav-cta{display:none}.nav-loc{display:block}:root{--nav-h:56px}.brand small{display:none}}
+
+/* 3D canvas: transparent, drawn only inside the active stage frame */
+#gl{position:fixed;left:0;top:0;width:100%;height:100vh;height:100lvh;pointer-events:none;z-index:30;display:block}
+
+/* stages */
+.stage{position:relative;width:100%;border-radius:var(--r-lg);background:radial-gradient(80% 55% at 28% 10%,rgba(255,255,255,.95),rgba(255,255,255,0) 62%),linear-gradient(180deg,var(--stage-top) 0%,#F2EAE5 60%,var(--stage-bot) 100%);overflow:hidden;touch-action:pan-y;-webkit-user-select:none;user-select:none;isolation:isolate;cursor:grab}
+.stage.is-dragging{cursor:grabbing}
+.stage::after{content:"";position:absolute;inset:0;border-radius:inherit;box-shadow:inset 0 1px 0 rgba(255,255,255,.9),inset 0 0 0 1px rgba(34,28,30,.06);pointer-events:none}
+.stage-art{position:absolute;left:8%;right:8%;top:6%;bottom:52px;width:84%;height:calc(100% - 52px - 6%);pointer-events:none}
+html.gl-on .stage-art{visibility:hidden}
+.stage-ui{position:absolute;left:14px;right:14px;bottom:10px;display:flex;align-items:center;justify-content:space-between;gap:10px;font-size:.78rem;color:var(--ink-2);pointer-events:none}
+.stage-ui > *{pointer-events:auto}
+.stage-tag{display:flex;align-items:center;gap:8px;min-width:0}
+.stage-tag span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.stage-tag i{font-style:normal;font-weight:600;letter-spacing:.12em;text-transform:uppercase;font-size:.64rem;padding:4px 7px;border-radius:5px;background:rgba(255,255,255,.7);color:var(--ink-2)}
+.stage-btn{display:inline-flex;align-items:center;gap:7px;min-height:36px;padding:0 13px;border-radius:999px;border:0;background:rgba(255,255,255,.82);box-shadow:0 1px 0 #fff inset,0 6px 16px -10px rgba(110,64,52,.5);font-size:.8rem;font-weight:600;cursor:pointer;white-space:nowrap}
+.stage-btn::before{content:"";width:7px;height:7px;background:var(--rose);border-radius:0 50% 50% 50%;transform:rotate(45deg)}
+.stage-btn:hover{background:#fff}
+
+/* hero */
+.hero{padding-block:clamp(20px,4vh,48px) clamp(40px,7vh,88px)}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.04fr) minmax(0,1fr);grid-template-areas:"copy stage" "facts stage";column-gap:clamp(24px,4vw,64px);row-gap:28px;align-items:center}
+.hero-copy{grid-area:copy;align-self:end;display:grid;gap:18px}
+.hero h1{font-size:clamp(2.3rem,5.6vw,5.1rem);line-height:.98;letter-spacing:-.022em;max-width:11ch}
+.lede{font-size:clamp(1.08rem,1.5vw,1.3rem);color:var(--ink-2);max-width:31ch;line-height:1.5}
+.hero-actions{display:flex;flex-wrap:wrap;align-items:center;gap:14px 24px;margin-top:10px}
+.hero-facts{grid-area:facts;align-self:start;list-style:none;padding:20px 0 0;display:grid;gap:8px;border-top:1px solid var(--line);max-width:30rem;font-size:.95rem;color:var(--ink-2)}
+.hero-facts li{display:flex;align-items:baseline;gap:10px}
+.hero-facts li::before{content:"";flex:none;width:7px;height:7px;background:var(--rose);border-radius:0 50% 50% 50%;transform:rotate(45deg) translateY(-1px)}
+.stage-hero{grid-area:stage;aspect-ratio:1/1.04;max-height:calc(100svh - var(--nav-h) - 56px);min-height:300px}
+@media (max-width:767px) and (orientation:portrait){
+  .hero-grid{grid-template-columns:minmax(0,1fr);grid-template-areas:"copy" "stage" "facts"}
+  .stage-hero{aspect-ratio:auto;height:clamp(260px,46svh,420px);max-height:none;min-height:0}
+  .hero-facts{padding-top:16px}
+}
+@media (max-height:520px) and (orientation:landscape){
+  .hero{padding-block:14px 32px}
+  .hero h1{font-size:clamp(1.8rem,4.4vw,2.6rem)}
+  .hero-copy{gap:10px}
+  .lede{font-size:1rem}
+  .hero-actions{margin-top:4px}
+  .hero-facts{display:none}
+  .stage-hero{min-height:240px}
+}
+
+/* problem: sticky stack */
+.problem{padding-block:clamp(56px,9vh,112px) clamp(40px,6vh,80px)}
+.problem-grid{display:grid;grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);gap:clamp(28px,5vw,88px);align-items:start}
+.problem-intro{position:sticky;top:calc(var(--nav-h) + 40px);display:grid;gap:14px}
+.problem-intro h2{font-size:clamp(2.1rem,4.4vw,3.6rem)}
+.problem-intro p:not(.eyebrow){color:var(--ink-2);max-width:30rem}
+.stack{list-style:none;margin:0;padding:0 0 4vh;display:flex;flex-direction:column;gap:22vh}
+.stack-item{position:sticky;top:calc(var(--nav-h) + 28px + var(--i) * 18px);perspective:1400px}
+.pcard{position:relative;background:var(--paper);border:1px solid var(--line);border-radius:var(--r-lg);padding:clamp(24px,3.2vw,44px);box-shadow:var(--shadow);transform-origin:50% 0;display:grid;gap:18px;min-height:min(52vh,400px);align-content:start;--shade:0}
+.pcard::after{content:"";position:absolute;inset:0;border-radius:inherit;background:var(--ink);opacity:var(--shade);pointer-events:none}
+.pcard-tag{font-size:.72rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2)}
+.pcard h3{font-size:clamp(1.7rem,3vw,2.5rem)}
+.pcard > p{color:var(--ink-2);max-width:34rem}
+.pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:6px}
+.pair > div{border-radius:var(--r-sm);padding:14px 16px;display:grid;gap:6px;align-content:start}
+.pair dt{font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+.pair dd{font-size:.95rem;line-height:1.45}
+.pair .pitch{background:rgba(34,28,30,.045);color:var(--ink-2)}
+.pair .pitch dd{font-style:italic}
+.pair .ours{background:var(--glass)}
+.pair .ours dt{color:var(--rose-ink)}
+@media (max-width:899px){
+  .problem-grid{grid-template-columns:minmax(0,1fr)}
+  .problem-intro{position:static}
+  .stack{gap:16vh}
+}
+@media (max-width:520px){.pair{grid-template-columns:minmax(0,1fr)}.pcard{min-height:0}}
+html.reduce .stack-item{position:static}
+html.reduce .stack{gap:20px}
+
+/* steps: horizontal chapter */
+.steps{position:relative;padding-block:clamp(48px,8vh,96px)}
+.steps-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px 32px;flex-wrap:wrap}
+.steps-head > div:first-child{display:grid;gap:12px}
+.progress{display:grid;gap:8px;min-width:min(100%,270px)}
+.progress-row{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.progress-label{font-weight:600;font-variant-numeric:tabular-nums;font-size:.95rem}
+.progress-label span:last-child{color:var(--rose-ink)}
+.bar{height:3px;background:var(--line);border-radius:3px;overflow:hidden}
+.bar-fill{display:block;height:100%;width:100%;background:var(--ink);transform-origin:0 50%;transform:scaleX(.25);transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.hint{font-size:.8rem;color:var(--ink-2);display:flex;align-items:center;gap:8px}
+.hint svg{flex:none}
+.step-nav{display:flex;gap:6px}
+.icon-btn{width:40px;height:40px;border-radius:50%;border:0;background:var(--paper);box-shadow:inset 0 0 0 1px var(--line);display:grid;place-items:center;cursor:pointer;transition:background .2s}
+.icon-btn:hover:not(:disabled){background:var(--glass)}
+.icon-btn:disabled{opacity:.4;cursor:default}
+.hint-h,.hint-touch{display:none}
+html.h-mode .hint-h{display:inline}
+html:not(.h-mode) .hint-touch{display:inline}
+html.reduce .hint{display:none}
+.steps-body{display:flex;flex-direction:column;gap:16px;margin-top:22px}
+.stage-steps{order:-1;height:clamp(240px,36svh,360px)}
+.steps-window{min-width:0;overflow-x:auto;scroll-snap-type:x mandatory;overscroll-behavior-x:contain;scrollbar-width:none;margin-inline:calc(var(--gutter) * -1);padding-inline:var(--gutter);scroll-padding-inline:var(--gutter)}
+.steps-window::-webkit-scrollbar{display:none}
+.steps-track{list-style:none;margin:0;padding:0;display:flex;gap:12px}
+.step-panel{flex:0 0 min(86%,440px);scroll-snap-align:start;background:var(--paper);border:1px solid var(--line);border-radius:var(--r-md);padding:22px;display:grid;gap:12px;align-content:start}
+.step-num{font-family:var(--f-display);font-size:3.4rem;line-height:.8;color:var(--rose)}
+.step-panel h3{font-size:clamp(1.8rem,3.2vw,2.8rem)}
+.step-meta{font-size:.82rem;font-weight:600;letter-spacing:.06em;color:var(--rose-ink)}
+.step-panel > p:not(.step-num):not(.step-meta){color:var(--ink-2);max-width:32rem}
+.dots{display:flex;justify-content:center;gap:4px;margin-top:6px}
+.dots button{width:28px;height:28px;border:0;background:none;padding:0;display:grid;place-items:center;cursor:pointer}
+.dots button::before{content:"";width:7px;height:7px;border-radius:50%;background:rgba(34,28,30,.22);transition:background .2s,transform .2s}
+.dots button[aria-current="true"]::before{background:var(--ink);transform:scale(1.25)}
+html.h-mode .dots{display:none}
+.name-field{display:grid;gap:6px;max-width:22rem;margin-top:4px}
+.name-field label{font-size:.85rem;font-weight:600}
+.name-field input,.field input,.field select{width:100%;min-height:48px;padding:0 14px;border-radius:var(--r-sm);border:1px solid rgba(34,28,30,.22);background:#fff;font-size:1rem;color:var(--ink)}
+.name-field input:focus-visible,.field input:focus-visible,.field select:focus-visible{outline:2px solid var(--ink);outline-offset:1px;border-color:var(--ink)}
+.field-help{font-size:.78rem;color:var(--ink-2)}
+.plan-doc{background:#fff;border-radius:var(--r-sm);padding:14px 16px;box-shadow:0 0 0 1px var(--line),0 14px 30px -24px rgba(110,64,52,.5);max-width:26rem;font-size:.86rem}
+.plan-doc-head{display:flex;justify-content:space-between;align-items:center;gap:10px;font-weight:600;padding-bottom:8px;border-bottom:1px dashed rgba(34,28,30,.2)}
+.plan-doc ol{list-style:none;padding:0;margin:0;display:grid}
+.plan-doc li{display:grid;grid-template-columns:4.4rem minmax(0,1fr) auto;gap:10px;padding:8px 0;border-bottom:1px solid rgba(34,28,30,.07);font-variant-numeric:tabular-nums;align-items:baseline}
+.plan-doc li:last-child{border-bottom:0;padding-bottom:0}
+.plan-doc .when{color:var(--rose-ink);font-weight:600}
+.plan-doc .cost{color:var(--ink-2);text-align:right}
+.checks{list-style:none;padding:0;display:grid;gap:8px;max-width:28rem;font-size:.93rem}
+.checks li{display:grid;grid-template-columns:4.2rem minmax(0,1fr);gap:10px;padding:10px 12px;border-radius:var(--r-sm);background:var(--ground)}
+.checks b{font-weight:600;color:var(--rose-ink)}
+/* desktop horizontal mode */
+html.h-mode .steps{height:calc(100vh - var(--nav-h));min-height:540px;padding-block:clamp(16px,3vh,36px) clamp(14px,2.4vh,28px);display:flex;flex-direction:column;justify-content:center}
+html.h-mode .steps > .wrap:first-child{flex:none}
+html.h-mode .steps-body{flex:1 1 auto;min-height:0;max-height:680px;display:grid;grid-template-columns:minmax(0,1.06fr) minmax(0,1fr);gap:clamp(20px,3vw,44px);margin-top:clamp(14px,2.6vh,28px)}
+html.h-mode .stage-steps{order:0;height:auto;aspect-ratio:1/1.02;max-height:100%;align-self:center}
+html.h-mode .steps-window{overflow:hidden;margin:0 0 0 -32px;padding:0 0 0 32px;height:100%;scroll-snap-type:none;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 30px);mask-image:linear-gradient(90deg,transparent 0,#000 30px)}
+html.h-mode .steps-track{height:100%;gap:0;will-change:transform}
+html.h-mode .step-panel{flex:0 0 88%;height:100%;background:none;border:0;border-radius:0;padding:4px clamp(20px,3vw,44px) 4px 0;border-right:1px solid var(--line);margin-right:clamp(20px,3vw,44px);align-content:center;overflow:hidden}
+html.h-mode .step-panel:last-child{border-right:0;margin-right:0}
+html.h-mode .steps-track::after{content:"";flex:0 0 12%}
+html.h-mode .step-num{font-size:clamp(3.4rem,7vh,5.4rem)}
+@media (max-height:700px){html.h-mode .step-num{display:none}html.h-mode .steps-head h2{font-size:clamp(1.9rem,3.4vw,2.6rem)}}
+@media (max-height:520px) and (orientation:landscape) and (min-width:600px){
+  html:not(.h-mode):not(.reduce) .steps-body{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.9fr);align-items:start}
+  html:not(.h-mode):not(.reduce) .stage-steps{order:0;height:clamp(220px,62svh,300px);grid-column:2;grid-row:1}
+  html:not(.h-mode):not(.reduce) .steps-window{grid-column:1;grid-row:1;margin-right:0}
+  html:not(.h-mode):not(.reduce) .step-panel{flex-basis:92%}
+  html:not(.h-mode):not(.reduce) .steps .dots{grid-column:1}
+}
+html.reduce .steps-window{overflow:visible;margin:0;padding:0;scroll-snap-type:none}
+html.reduce .steps-track{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr))}
+html.reduce .step-panel{flex:none}
+html.reduce .dots,html.reduce .step-nav{display:none}
+
+/* benefits: deck */
+.benefits{padding-block:clamp(64px,10vh,120px)}
+.stage-deal{height:clamp(220px,28vw,330px);margin-top:28px}
+.deck{list-style:none;margin:20px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.deck > li{position:relative;will-change:transform}
+.bcard{position:relative;height:100%;cursor:pointer;perspective:1100px;--rx:0deg;--ry:0deg;--gx:50%;--gy:0%}
+.tilt{height:100%;transform:rotateX(var(--rx)) rotateY(var(--ry));transform-style:preserve-3d;transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.is-tilting > .tilt{transition:transform .08s linear}
+.flipper{display:grid;height:100%;transform-style:preserve-3d;transition:transform .8s cubic-bezier(.3,1.35,.45,1)}
+.bcard.is-flipped .flipper{transform:rotateY(180deg)}
+.face{grid-area:1/1;position:relative;-webkit-backface-visibility:hidden;backface-visibility:hidden;background:var(--paper);border:1px solid var(--line);border-radius:var(--r-md);padding:24px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:10px;min-height:236px;overflow:hidden}
+.face.back{transform:rotateY(180deg);background:var(--glass)}
+.face h3{font-size:1.6rem}
+.face p:not(.kicker){color:var(--ink-2);font-size:.98rem}
+.face.back p:not(.kicker){color:var(--ink)}
+.kicker{font-size:.7rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--rose-ink)}
+.flip-btn{margin-top:auto;align-self:flex-start;display:inline-flex;align-items:center;gap:6px;border:0;background:none;padding:6px 0;font-size:.85rem;font-weight:600;cursor:pointer;text-decoration:underline;text-underline-offset:4px;text-decoration-color:var(--rose)}
+.glare{position:absolute;inset:0;border-radius:inherit;background:radial-gradient(circle at var(--gx) var(--gy),rgba(255,255,255,.75),rgba(255,255,255,0) 52%);opacity:0;transition:opacity .35s;pointer-events:none}
+.bcard.is-tilting .glare,.price-card.is-tilting .glare{opacity:1}
+.deck-note{margin-top:14px;font-size:.85rem;color:var(--ink-2)}
+@media (max-width:959px){.deck{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:599px){.deck{grid-template-columns:minmax(0,1fr)}.face{min-height:0}}
+html.reduce .flipper{transition:none;transform:none!important}
+html.reduce .face.back{transform:none;visibility:hidden}
+html.reduce .bcard.is-flipped .face.front{visibility:hidden}
+html.reduce .bcard.is-flipped .face.back{visibility:visible}
+
+/* proof: cylinder */
+.proof{padding-block:clamp(64px,10vh,120px);position:relative}
+.proof-head{display:flex;justify-content:space-between;align-items:flex-end;gap:16px 32px;flex-wrap:wrap}
+.proof-head .sec-head{max-width:40rem}
+.cyl-viewport{position:relative;margin-top:24px;outline-offset:6px;border-radius:var(--r-md)}
+.cyl{list-style:none;margin:0 calc(var(--gutter) * -1);padding:4px var(--gutter) 18px;display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;overscroll-behavior-x:contain;scrollbar-width:none;scroll-padding-inline:var(--gutter)}
+.cyl::-webkit-scrollbar{display:none}
+.ccard{flex:0 0 min(80%,330px);scroll-snap-align:center;background:var(--paper);border:1px solid var(--line);border-radius:var(--r-md);padding:20px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:12px;min-height:380px}
+.ccard-tag{display:flex;justify-content:space-between;gap:8px;font-size:.68rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--ink-2)}
+.ccard-tag em{font-style:normal;color:var(--rose-ink)}
+.ba{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.ba figure{display:grid;gap:5px}
+.ba .sw{aspect-ratio:5/4;border-radius:10px;overflow:hidden;background:linear-gradient(135deg,#EFD6C8,#DDB7A5)}
+.ba .sw svg{display:block;width:100%;height:100%}
+.ba figcaption{font-size:.72rem;font-weight:600;color:var(--ink-2);letter-spacing:.06em;text-transform:uppercase}
+.ccard h3{font-size:1.45rem}
+.ccard .sub{font-size:.9rem;color:var(--ink-2)}
+.consent{margin-top:auto;font-size:.76rem;color:var(--ink-2);padding-top:10px;border-top:1px solid var(--line)}
+.ccard-review blockquote{margin:0;font-family:var(--f-display);font-size:1.45rem;line-height:1.2;color:var(--ink)}
+.ccard-review blockquote::before{content:"\201C";display:block;font-size:3.4rem;line-height:.6;color:var(--rose);margin-bottom:8px}
+.ccard-review .who{font-size:.86rem;font-weight:600}
+.placeholder{background:rgba(201,139,122,.16);color:var(--rose-ink);border-radius:4px;padding:0 4px;font-family:var(--f-text);font-size:.8em;font-weight:600;letter-spacing:.02em}
+html.h-mode .proof{height:calc(100vh - var(--nav-h));min-height:540px;padding-block:clamp(16px,3vh,36px) clamp(10px,2vh,24px);display:flex;flex-direction:column;justify-content:center;overflow:hidden}
+html.h-mode .proof > .wrap{flex:none}
+html.h-mode .proof > .cyl-wrap{flex:1 1 auto;min-height:0;max-height:620px;display:flex;flex-direction:column}
+html.h-mode .proof .dots{display:none}
+html.h-mode .cyl-viewport{flex:1 1 auto;min-height:0;margin-top:clamp(8px,2vh,22px);perspective:1700px;cursor:grab;touch-action:pan-y}
+html.h-mode .cyl-viewport.is-grabbing{cursor:grabbing}
+html.h-mode .cyl{position:absolute;left:50%;top:50%;display:block;overflow:visible;margin:calc(var(--ch,380px) / -2) 0 0 calc(var(--cw,290px) / -2);padding:0;width:var(--cw,290px);height:var(--ch,380px);transform-style:preserve-3d;transform:translateZ(calc(var(--R,400px) * -1)) rotateY(var(--rot,0deg))}
+html.h-mode .ccard{position:absolute;inset:0;min-height:0;transform:rotateY(calc(var(--i) * 45deg)) translateZ(var(--R,400px));-webkit-backface-visibility:hidden;backface-visibility:hidden;-webkit-user-select:none;user-select:none}
+@media (max-height:700px){html.h-mode .proof .sec-head p:not(.eyebrow){display:none}html.h-mode .proof h2{font-size:clamp(1.9rem,3.4vw,2.6rem)}}
+html.reduce .cyl{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,260px),1fr));overflow:visible;margin:0;padding:0}
+html.reduce .proof .dots,html.reduce .proof .step-nav{display:none}
+
+/* compare: resizable split */
+.compare{padding-block:clamp(64px,10vh,120px)}
+.split{--split:50%;--gap:64px;position:relative;display:grid;grid-template-columns:calc(var(--split) - var(--gap) / 2) calc(100% - var(--split) - var(--gap) / 2);column-gap:var(--gap);margin-top:40px;padding-block:22px}
+.split-row{display:contents}
+.split-paper{position:absolute;top:0;bottom:0;border-radius:var(--r-lg);pointer-events:none;transition:box-shadow .3s}
+.split-paper.old{left:-16px;width:calc(var(--split) - var(--gap) / 2 + 16px);background:repeating-linear-gradient(-45deg,rgba(34,28,30,.035) 0 1px,transparent 1px 10px),#F1EBE7}
+.split-paper.new{right:-16px;width:calc(100% - var(--split) - var(--gap) / 2 + 16px);background:var(--paper);box-shadow:var(--shadow)}
+.split.lean-new .split-paper.new{box-shadow:0 1px 0 rgba(255,255,255,.75) inset,0 30px 60px -30px rgba(110,64,52,.5)}
+.split-head,.split-cell{position:relative}
+.split-head{font-size:clamp(1.5rem,2.6vw,2.2rem);padding-bottom:16px}
+.split-head.old{color:var(--ink-2)}
+.split-cell{padding:16px 0;border-top:1px solid var(--line);display:grid;gap:4px;align-content:start;min-width:0}
+.split-cell p{font-size:.98rem;line-height:1.45}
+.cell-topic{font-size:.68rem!important;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2)}
+.split-cell.new .cell-topic{color:var(--rose-ink)}
+.split-cell.old p:not(.cell-topic){color:var(--ink-2)}
+.chip{display:none}
+.split-handle{position:absolute;top:0;bottom:0;left:var(--split);width:44px;margin-left:-22px;cursor:ew-resize;touch-action:none;display:flex;justify-content:center;z-index:2;border-radius:22px}
+.split-handle::before{content:"";width:2px;height:100%;background:var(--ink);opacity:.8}
+.split-grip{position:absolute;top:50%;left:50%;width:46px;height:46px;margin:-23px 0 0 -23px;border-radius:50%;background:var(--ink);color:var(--ground);display:grid;place-items:center;box-shadow:0 10px 24px -10px rgba(34,28,30,.6);transition:transform .25s}
+.split-handle:hover .split-grip,.split-handle:focus-visible .split-grip{transform:scale(1.08)}
+.split-hint{margin-top:16px}
+@media (max-width:719px){
+  .split{display:grid;grid-template-columns:minmax(0,1fr);gap:14px;padding:0;margin-top:28px}
+  .split-paper,.split-handle,.split-head,.split-hint{display:none}
+  .split-row{display:grid;gap:0;border-radius:var(--r-md);overflow:hidden;box-shadow:0 0 0 1px var(--line)}
+  .split-cell{border-top:0;padding:14px 16px}
+  .split-cell.old{background:#F1EBE7}
+  .split-cell.new{background:var(--paper)}
+  .split-cell .cell-topic[aria-hidden]{display:none}
+  .chip{display:inline-block;font-size:.66rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin-bottom:2px}
+  .split-cell.old .chip{color:var(--ink-2)}
+  .split-cell.new .chip{color:var(--rose-ink)}
+}
+
+/* pricing */
+.pricing{padding-block:clamp(64px,10vh,120px)}
+.pricing-top{display:flex;justify-content:space-between;align-items:flex-end;gap:20px 32px;flex-wrap:wrap}
+.toggle{display:inline-flex;padding:4px;border-radius:999px;background:var(--glass);gap:2px}
+.toggle button{min-height:42px;padding:0 18px;border:0;border-radius:999px;background:none;font-weight:600;font-size:.92rem;cursor:pointer;color:var(--ink-2);transition:background .25s,color .25s}
+.toggle button[aria-pressed="true"]{background:var(--ink);color:var(--ground)}
+.prices{list-style:none;margin:36px 0 0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;perspective:1600px}
+.price-card{position:relative;--rx:0deg;--ry:0deg;--gx:50%;--gy:0%}
+.pc-inner{display:grid;height:100%;transform-style:preserve-3d}
+.price-card .face{min-height:300px;gap:8px}
+.price-card .face.back{background:var(--glass)}
+.price-card h3{font-size:1.45rem}
+.treats{font-size:.9rem;color:var(--ink-2)}
+.amount{margin-top:auto;display:grid;gap:2px;padding-top:14px;border-top:1px solid var(--line)}
+.amount b{font-family:var(--f-display);font-weight:400;font-size:clamp(2.2rem,3.4vw,2.9rem);line-height:1;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.amount b small{font-family:var(--f-text);font-size:.9rem;font-weight:600;letter-spacing:0;margin-right:4px;color:var(--ink-2)}
+.amount span{font-size:.84rem;color:var(--ink-2)}
+.price-card .btn{margin-top:14px;align-self:flex-start}
+.price-card .btn-quiet{min-height:42px}
+.price-note{margin-top:18px;font-size:.85rem;color:var(--ink-2);max-width:52rem}
+@media (max-width:1099px){.prices{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:599px){.prices{grid-template-columns:minmax(0,1fr)}.price-card .face{min-height:0}}
+html.reduce .pc-inner{transform:none!important}
+html.reduce .price-card .face.back{transform:none;visibility:hidden}
+html.reduce .price-card.is-flipped .face.front{visibility:hidden}
+html.reduce .price-card.is-flipped .face.back{visibility:visible}
+
+/* faq */
+.faq{padding-block:clamp(64px,10vh,120px)}
+.faq-grid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(28px,5vw,80px);align-items:start}
+.faq-grid .sec-head{position:sticky;top:calc(var(--nav-h) + 32px)}
+.faq-grid .sec-head .btn{justify-self:start;margin-top:8px}
+.acc{border-top:1px solid var(--line)}
+.acc-item{border-bottom:1px solid var(--line)}
+.acc-item h3{font-family:var(--f-text);font-size:1.12rem;font-weight:600;letter-spacing:0}
+.acc-btn{width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 0;background:none;border:0;text-align:left;cursor:pointer;font-weight:600;line-height:1.3}
+.acc-icon{flex:none;width:32px;height:32px;border-radius:50%;background:var(--glass);position:relative;transition:transform .4s cubic-bezier(.2,.8,.2,1.3)}
+.acc-icon::before,.acc-icon::after{content:"";position:absolute;left:50%;top:50%;width:12px;height:1.6px;margin:-.8px 0 0 -6px;background:var(--ink);border-radius:2px}
+.acc-icon::after{transform:rotate(90deg);transition:transform .4s}
+.acc-btn[aria-expanded="true"] .acc-icon{transform:rotate(180deg)}
+.acc-btn[aria-expanded="true"] .acc-icon::after{transform:rotate(0)}
+.acc-panel{overflow:hidden}
+.acc-body{padding:0 48px 24px 0;color:var(--ink-2);display:grid;gap:10px;max-width:40rem}
+@media (max-width:899px){.faq-grid{grid-template-columns:minmax(0,1fr)}.faq-grid .sec-head{position:static}.acc-body{padding-right:0}}
+
+/* final */
+.final{padding-block:clamp(56px,9vh,110px) clamp(56px,8vh,96px)}
+.final-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:clamp(24px,4vw,64px);align-items:center}
+.stage-final{aspect-ratio:1/1.02;max-height:calc(100svh - var(--nav-h) - 40px);min-height:320px}
+.final-copy{display:grid;gap:16px}
+.final-copy > p:not(.eyebrow){color:var(--ink-2);max-width:32rem;font-size:1.08rem}
+.book-form{display:grid;gap:14px;margin-top:10px;max-width:30rem}
+.field{display:grid;gap:6px}
+.field label{font-size:.88rem;font-weight:600}
+.field .err{font-size:.8rem;color:#9B2C2C;min-height:0}
+.field input[aria-invalid="true"]{border-color:#9B2C2C}
+.book-form .btn{justify-self:start;margin-top:4px}
+.form-note{font-size:.8rem;color:var(--ink-2)}
+.form-result{font-size:.95rem;font-weight:500;padding:14px 16px;border-radius:var(--r-sm);background:var(--glass)}
+.form-result:empty{display:none}
+@media (max-width:899px){.final-grid{grid-template-columns:minmax(0,1fr)}.stage-final{aspect-ratio:auto;height:clamp(280px,48svh,440px);max-height:none;min-height:0}}
+@media (max-width:899px) and (max-height:520px) and (orientation:landscape) and (min-width:600px){.final-grid{grid-template-columns:minmax(0,.9fr) minmax(0,1fr);align-items:start}.stage-final{position:sticky;top:calc(var(--nav-h) + 12px);height:calc(100svh - var(--nav-h) - 24px)}}
+
+/* footer */
+.foot{padding-block:40px 48px;border-top:1px solid var(--line);font-size:.86rem;color:var(--ink-2)}
+.foot .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:24px 48px}
+.foot .brand b{font-size:1.4rem;color:var(--ink)}
+.foot p{max-width:44rem}
+.foot-meta{display:grid;gap:8px}
+.credit{font-weight:600;color:var(--ink)}
+@media (max-width:767px){.foot .wrap{grid-template-columns:minmax(0,1fr)}}
+
+/* phone CTA bar */
+.cta-bar{position:fixed;left:0;right:0;bottom:0;z-index:50;display:none;align-items:center;justify-content:space-between;gap:12px;padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px));background:rgba(247,242,238,.94);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border-top:1px solid var(--line);transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+.cta-bar p{font-size:.84rem;line-height:1.3;font-weight:500;min-width:0}
+.cta-bar .btn{min-height:46px;padding:0 1.15rem;flex:none}
+.cta-bar.is-hidden{transform:translateY(110%)}
+@media (max-width:767px){.cta-bar{display:flex}body{padding-bottom:72px}}
+</style>
+</head>
+<body>
+<a class="skip" href="#book">Skip to booking</a>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Velour Aesthetics, back to top"><b>Velour</b><small>Aesthetics</small></a>
+    <nav aria-label="Sections">
+      <ul class="nav-links">
+        <li><a href="#how">How it works</a></li>
+        <li><a href="#why">Why us</a></li>
+        <li><a href="#results">Results</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+    </nav>
+    <span class="nav-loc">Scottsdale, AZ</span>
+    <a class="btn btn-primary btn-sm nav-cta" href="#book">Book a free consult</a>
+  </div>
+</header>
+
+<canvas id="gl" aria-hidden="true"></canvas>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">Velour Aesthetics · Scottsdale, Arizona</p>
+        <h1 id="hero-title">Skin care, planned by a nurse injector.</h1>
+        <p class="lede">A free consult, a written plan and results that look like you.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#book">Book a free consult</a>
+          <a class="link-quiet" href="#how">See the four steps</a>
+        </div>
+      </div>
+      <ul class="hero-facts">
+        <li>Your consult is with a nurse injector, and it's free</li>
+        <li>You leave with a written plan that lists every cost</li>
+        <li>Every injectable treatment includes a two-week check-in</li>
+      </ul>
+      <div class="stage stage-hero" data-stage="hero" data-drop data-inset="14 14 54 14" tabindex="0" role="group" aria-roledescription="3D illustration" aria-label="A glass serum bottle, a dropper and a stone dish. The dropper lifts out and a drop falls into the dish. Left and right arrow keys turn it.">
+        <svg class="stage-art" aria-hidden="true" focusable="false"><use href="#scene-art"/></svg>
+        <div class="stage-ui">
+          <p class="stage-tag"><i>Illustration</i><span>Drag to turn</span></p>
+          <button class="stage-btn" type="button" data-action="drop">Release a drop</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROBLEM -->
+  <section class="problem" id="problem" aria-labelledby="problem-title">
+    <div class="wrap problem-grid">
+      <div class="problem-intro">
+        <p class="eyebrow">The problem</p>
+        <h2 id="problem-title">What goes wrong at most med spas?</h2>
+        <p>If any of these sound familiar, your first visit with us will feel different. Each card shows the sales line and what we do instead.</p>
+      </div>
+      <ul class="stack">
+        <li class="stack-item" style="--i:0">
+          <article class="pcard">
+            <p class="pcard-tag">Pressure</p>
+            <h3>Upsold on the first visit</h3>
+            <p>You came in with one question and left with a bundle. The consult turned into a sales pitch.</p>
+            <dl class="pair">
+              <div class="pitch"><dt>The pitch</dt><dd>"Book today and I'll add a second area at half price."</dd></div>
+              <div class="ours"><dt>At Velour</dt><dd>Your first visit is a consult only. No charge, and no treatment unless you ask for it.</dd></div>
+            </dl>
+          </article>
+        </li>
+        <li class="stack-item" style="--i:1">
+          <article class="pcard">
+            <p class="pcard-tag">Results</p>
+            <h3>Results that look overdone</h3>
+            <p>Too much product, too soon, and a face that no longer looks like yours.</p>
+            <dl class="pair">
+              <div class="pitch"><dt>The pitch</dt><dd>"We may as well use the full syringe while you're here."</dd></div>
+              <div class="ours"><dt>At Velour</dt><dd>We start conservative and adjust at your two-week check-in, only if you want more.</dd></div>
+            </dl>
+          </article>
+        </li>
+        <li class="stack-item" style="--i:2">
+          <article class="pcard">
+            <p class="pcard-tag">Planning</p>
+            <h3>No plan, just packages</h3>
+            <p>A prepaid bundle decides your treatment before anyone has looked closely at your skin.</p>
+            <dl class="pair">
+              <div class="pitch"><dt>The pitch</dt><dd>"The six-session package is the best value."</dd></div>
+              <div class="ours"><dt>At Velour</dt><dd>Every step, its timing and its cost is written down before you agree to anything.</dd></div>
+            </dl>
+          </article>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS: horizontal chapter -->
+  <section class="steps" id="how" aria-labelledby="how-title">
+    <div class="wrap">
+      <div class="steps-head">
+        <div>
+          <p class="eyebrow">How it works</p>
+          <h2 id="how-title">How does it work?</h2>
+        </div>
+        <div class="progress">
+          <div class="progress-row">
+            <p class="progress-label" aria-live="polite"><span class="js-step-n">Step 1</span> of 4 · <span class="js-step-name">Consult</span></p>
+            <div class="step-nav">
+              <button class="icon-btn js-step-prev" type="button" aria-label="Previous step" disabled><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M10 3 5 8l5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+              <button class="icon-btn js-step-next" type="button" aria-label="Next step"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="m6 3 5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+            </div>
+          </div>
+          <div class="bar" aria-hidden="true"><span class="bar-fill"></span></div>
+          <p class="hint"><svg width="26" height="10" viewBox="0 0 26 10" aria-hidden="true"><path d="M1 5h23m-4-4 4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="hint-h">Scroll down to move sideways</span><span class="hint-touch">Swipe sideways through the steps</span></p>
+        </div>
+      </div>
+    </div>
+    <div class="wrap steps-body">
+      <div class="steps-window" data-lenis-prevent-wheel-x>
+        <ol class="steps-track">
+          <li class="step-panel" aria-label="Step 1 of 4: Consult">
+            <p class="step-num" aria-hidden="true">1</p>
+            <h3>Consult</h3>
+            <p class="step-meta">Free · about 30 minutes <span class="verify">[VERIFY]</span></p>
+            <p>Sit down with a nurse injector. Talk through what bothers you, what you want to keep and what you want to spend. Nothing is sold at this visit.</p>
+            <div class="name-field">
+              <label for="name-input">Try it: type your first name</label>
+              <input id="name-input" name="preview-name" type="text" autocomplete="given-name" maxlength="16" placeholder="Your first name" spellcheck="false">
+              <p class="field-help">The bottle label updates. Nothing leaves this page.</p>
+            </div>
+          </li>
+          <li class="step-panel" aria-label="Step 2 of 4: Plan">
+            <p class="step-num" aria-hidden="true">2</p>
+            <h3>Plan</h3>
+            <p class="step-meta">Written · yours to take home</p>
+            <p>You get a written plan: each treatment, when it happens and what it costs. Read it at home and decide in your own time.</p>
+            <div class="plan-doc reveal" role="group" aria-label="Example plan">
+              <p class="plan-doc-head"><span>Example plan for <span class="js-name">you</span></span><span class="verify">[VERIFY]</span></p>
+              <ol>
+                <li><span class="when">Week 0</span><span class="what">First treatment</span><span class="cost">from $___</span></li>
+                <li><span class="when">Week 2</span><span class="what">Check-in with your injector</span><span class="cost">Included</span></li>
+                <li><span class="when">Week 12</span><span class="what">Review and top-up if needed</span><span class="cost">Listed</span></li>
+              </ol>
+            </div>
+          </li>
+          <li class="step-panel" aria-label="Step 3 of 4: Treat">
+            <p class="step-num" aria-hidden="true">3</p>
+            <h3>Treat</h3>
+            <p class="step-meta">Same injector · under an hour for most visits <span class="verify">[VERIFY]</span></p>
+            <p>Your nurse injector does the treatment with the products named in your plan.</p>
+            <ul class="checks reveal">
+              <li><b>Before</b><span>We confirm the plan, the product and the amount with you.</span></li>
+              <li><b>During</b><span>Numbing is available, and you can pause at any point.</span></li>
+              <li><b>After</b><span>You take home written aftercare.</span></li>
+            </ul>
+          </li>
+          <li class="step-panel" aria-label="Step 4 of 4: Review">
+            <p class="step-num" aria-hidden="true">4</p>
+            <h3>Review</h3>
+            <p class="step-meta">Two weeks later · in person</p>
+            <p>You come back for a check-in. We look at the result together, adjust if something needs it and update your plan.</p>
+            <p class="reveal"><a class="btn btn-primary" href="#book">Book a free consult</a></p>
+          </li>
+        </ol>
+      </div>
+      <div class="stage stage-steps" data-stage="steps" data-inset="14 14 50 14" tabindex="0" role="group" aria-roledescription="3D illustration" aria-label="The serum set changes with each step: the label shows your name, three drops line up as visits, a drop falls into the dish, and the dish glows at the review. Left and right arrow keys turn it.">
+        <svg class="stage-art" aria-hidden="true" focusable="false"><use href="#scene-art"/></svg>
+        <div class="stage-ui">
+          <p class="stage-tag"><i>Illustration</i><span class="js-step-cap">The label shows your name.</span></p>
+        </div>
+      </div>
+      <div class="dots js-step-dots" role="group" aria-label="Choose a step">
+        <button type="button" aria-label="Step 1: Consult" aria-current="true"></button>
+        <button type="button" aria-label="Step 2: Plan"></button>
+        <button type="button" aria-label="Step 3: Treat"></button>
+        <button type="button" aria-label="Step 4: Review"></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- BENEFITS: deck deal -->
+  <section class="benefits" id="why" aria-labelledby="why-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Why Velour</p>
+        <h2 id="why-title">Why book with us?</h2>
+        <p>Six things we commit to before you pay for anything. Tap a card to turn it over.</p>
+      </div>
+      <div class="stage stage-deal" data-stage="deal" data-inset="10 14 40 14" tabindex="0" role="group" aria-roledescription="3D illustration" aria-label="The stone dish, the serum bottle and two drops. The cards below rise out of the dish. Left and right arrow keys turn it.">
+        <svg class="stage-art" aria-hidden="true" focusable="false"><use href="#scene-art"/></svg>
+        <div class="stage-ui"><p class="stage-tag"><i>Illustration</i><span>Cards rise out of the dish</span></p></div>
+      </div>
+      <ul class="deck">
+        <li>
+          <div class="bcard">
+            <div class="tilt"><div class="flipper">
+              <article class="face front">
+                <p class="kicker">Who treats you</p>
+                <h3>Nurse injectors only</h3>
+                <p>Every injection is done by a licensed nurse injector <span class="verify">[VERIFY]</span>. No sales staff in the treatment room.</p>
+                <button class="flip-btn" type="button">Turn over</button>
+                <span class="glare" aria-hidden="true"></span>
+              </article>
+              <article class="face back">
+                <p class="kicker">What it means for you</p>
+                <h3>Same person, every visit</h3>
+                <p>The injector you meet at your consult is the one who treats you and sees you at the check-in.</p>
+                <button class="flip-btn" type="button">Turn back</button>
+                <span class="glare" aria-hidden="true"></span>
+              </article>
+            </div></div>
+          </div>
+        </li>
+        <li>
+          <div class="bcard">
+            <div class="tilt"><div class="flipper">
+              <article class="face front">
+                <p class="kicker">What you pay</p>
+                <h3>Written plan with every cost</h3>
+                <p>You take home a plan listing each treatment, its timing and its price before you agree to anything.</p>
+                <button class="flip-btn" type="button">Turn over</button>
+                <span class="glare" aria-hidden="true"></span>
+              </article>
+              <article class="face back">
+                <p class="kicker">What it means for you</p>
+                <h3>No prepaid package</h3>
+                <p>You pay per visit. Change the plan or stop it at any point, with nothing locked in.</p>
+                <button class="flip-btn" type="button">Turn back</button>
+                <span class="glare" aria-hidden="true"></span>
+              </article>
+            </div></div>
+          </div>
+        </li>
+        <li>
+          <div class="bcard">
+            <div class="tilt"><div class="flipper">
+              <article class="face front">
+                <p class="kicker">How it looks</p>
+                <h3>Natural-looking results</h3>
+                <p>We start with less and build up. The aim is you on a good day, with your own expressions.</p>
+                <button class="flip-btn" type="button">Turn over</button>
+                <span class="glare" aria-hidden="true"></span>
+              </article>
+              <article class="face back">
+                <p class="kicker">What it means for you</p>
+                <h3>Honest expectations</h3>
+                <p>Results vary from person to person. Your injector tells you what's realistic before you book a treatment.</p>
+                <button class="flip-btn" type="button">Turn back</button>
+                <span class="glare" aria-hidden="true"></span>
+              </article>
+            </div></div>
+          </div>
+        </li>
+        <li>
+          <div class="bcard">
+            <div class="tilt"><div class="flipper">
+              <article class="face front">
+                <p class="kicker">What we use</p>
+                <h3>Medical-grade products</h3>
+                <p>FDA-approved neurotoxins and fillers from established manufacturers <span class="verify">[VERIFY brands]</span>.</p>
+                <button class="flip-btn" type="button">Turn over</button>
+                <span class="glare" aria-hidden="true"></span>
+              </article>
+              <article class="face back">
+                <p class="kicker">What it means for you</p>
+                <h3>See the box</h3>
+                <p>Ask to see the product and its lot number before your treatment. We'll show you.</p>
+                <button class="flip-btn" type="button">Turn back</button>
+                <span class="glare" aria-hidden="true"></span>
+              </article>
+            </div></div>
+          </div>
+        </li>
+        <li>
+          <div class="bcard">
+            <div class="tilt"><div class="flipper">
+              <article class="face front">
+                <p class="kicker">After treatment</p>
+                <h3>Two-week check-in</h3>
+                <p>Every injectable treatment includes a follow-up visit two weeks later to review the result.</p>
+                <button class="flip-btn" type="button">Turn over</button>
+                <span class="glare" aria-hidden="true"></span>
+              </article>
+              <article class="face back">
+                <p class="kicker">What it means for you</p>
+                <h3>Adjust, don't guess</h3>
+                <p>Small adjustments at the check-in are part of the plan <span class="verify">[VERIFY pricing]</span>.</p>
+                <button class="flip-btn" type="button">Turn back</button>
+                <span class="glare" aria-hidden="true"></span>
+              </article>
+            </div></div>
+          </div>
+        </li>
+        <li>
+          <div class="bcard">
+            <div class="tilt"><div class="flipper">
+              <article class="face front">
+                <p class="kicker">How you pay</p>
+                <h3>Flexible payment</h3>
+                <p>Pay per visit, or split the cost into monthly payments through a financing partner <span class="verify">[VERIFY]</span>.</p>
+                <button class="flip-btn" type="button">Turn over</button>
+                <span class="glare" aria-hidden="true"></span>
+              </article>
+              <article class="face back">
+                <p class="kicker">What it means for you</p>
+                <h3>Both prices, side by side</h3>
+                <p>Your written plan shows the full price and the monthly option, so you can compare before you decide.</p>
+                <button class="flip-btn" type="button">Turn back</button>
+                <span class="glare" aria-hidden="true"></span>
+              </article>
+            </div></div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- PROOF: cylinder -->
+  <section class="proof" id="results" aria-labelledby="results-title">
+    <div class="wrap proof-head">
+      <div class="sec-head">
+        <p class="eyebrow">Results</p>
+        <h2 id="results-title">Does it work?</h2>
+        <p>Results vary from person to person, so we don't promise them. Photos and reviews appear here only with the client's written consent.</p>
+      </div>
+      <div class="progress">
+        <div class="progress-row">
+          <p class="progress-label" aria-live="polite"><span class="js-card-n">Card 1</span> of 8</p>
+          <div class="step-nav">
+            <button class="icon-btn js-cyl-prev" type="button" aria-label="Previous card"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M10 3 5 8l5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+            <button class="icon-btn js-cyl-next" type="button" aria-label="Next card"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="m6 3 5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          </div>
+        </div>
+        <div class="bar" aria-hidden="true"><span class="bar-fill js-cyl-bar" style="transform:scaleX(.125)"></span></div>
+        <p class="hint"><svg width="26" height="10" viewBox="0 0 26 10" aria-hidden="true"><path d="M1 5h23m-4-4 4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="hint-h">Scroll or drag to turn the cards</span><span class="hint-touch">Swipe sideways through the cards</span></p>
+      </div>
+    </div>
+    <div class="wrap cyl-wrap">
+      <div class="cyl-viewport" tabindex="0" role="region" aria-roledescription="carousel" aria-label="Results and reviews. Left and right arrow keys move between cards.">
+        <ul class="cyl">
+          <li class="ccard ccard-ba" style="--i:0" role="group" aria-roledescription="slide" aria-label="1 of 8">
+            <p class="ccard-tag"><span>Before and after</span><em>Illustration</em></p>
+            <div class="ba"><figure><div class="sw" data-sw="lines" data-seed="11"></div><figcaption>Before</figcaption></figure><figure><div class="sw" data-sw="lines" data-seed="11" data-after></div><figcaption>2 weeks after</figcaption></figure></div>
+            <h3>Forehead lines</h3>
+            <p class="sub">Neurotoxin · one visit</p>
+            <p class="consent">Illustration, not a client photo. Real before-and-after photos are shown only with written consent.</p>
+          </li>
+          <li class="ccard ccard-review" style="--i:1" role="group" aria-roledescription="slide" aria-label="2 of 8">
+            <p class="ccard-tag"><span>Client review</span><em>Placeholder</em></p>
+            <blockquote><p><span class="placeholder">[ADD real review]</span> A verified client review goes here, word for word.</p></blockquote>
+            <p class="who">[First name] · Lip filler · [Month year]</p>
+            <p class="consent">Published with permission. Source: <span class="placeholder">[ADD link to the original review]</span></p>
+          </li>
+          <li class="ccard ccard-ba" style="--i:2" role="group" aria-roledescription="slide" aria-label="3 of 8">
+            <p class="ccard-tag"><span>Before and after</span><em>Illustration</em></p>
+            <div class="ba"><figure><div class="sw" data-sw="hollow" data-seed="23"></div><figcaption>Before</figcaption></figure><figure><div class="sw" data-sw="hollow" data-seed="23" data-after></div><figcaption>2 weeks after</figcaption></figure></div>
+            <h3>Under-eye hollows</h3>
+            <p class="sub">Filler · one visit</p>
+            <p class="consent">Illustration, not a client photo. Real before-and-after photos are shown only with written consent.</p>
+          </li>
+          <li class="ccard ccard-review" style="--i:3" role="group" aria-roledescription="slide" aria-label="4 of 8">
+            <p class="ccard-tag"><span>Client review</span><em>Placeholder</em></p>
+            <blockquote><p><span class="placeholder">[ADD real review]</span> A verified client review goes here, word for word.</p></blockquote>
+            <p class="who">[First name] · Neurotoxin · [Month year]</p>
+            <p class="consent">Published with permission. Source: <span class="placeholder">[ADD link to the original review]</span></p>
+          </li>
+          <li class="ccard ccard-ba" style="--i:4" role="group" aria-roledescription="slide" aria-label="5 of 8">
+            <p class="ccard-tag"><span>Before and after</span><em>Illustration</em></p>
+            <div class="ba"><figure><div class="sw" data-sw="texture" data-seed="37"></div><figcaption>Before</figcaption></figure><figure><div class="sw" data-sw="texture" data-seed="37" data-after></div><figcaption>After 3 sessions</figcaption></figure></div>
+            <h3>Skin texture</h3>
+            <p class="sub">Microneedling · series of three</p>
+            <p class="consent">Illustration, not a client photo. Real before-and-after photos are shown only with written consent.</p>
+          </li>
+          <li class="ccard ccard-review" style="--i:5" role="group" aria-roledescription="slide" aria-label="6 of 8">
+            <p class="ccard-tag"><span>Client review</span><em>Placeholder</em></p>
+            <blockquote><p><span class="placeholder">[ADD real review]</span> A verified client review goes here, word for word.</p></blockquote>
+            <p class="who">[First name] · Microneedling · [Month year]</p>
+            <p class="consent">Published with permission. Source: <span class="placeholder">[ADD link to the original review]</span></p>
+          </li>
+          <li class="ccard ccard-ba" style="--i:6" role="group" aria-roledescription="slide" aria-label="7 of 8">
+            <p class="ccard-tag"><span>Before and after</span><em>Illustration</em></p>
+            <div class="ba"><figure><div class="sw" data-sw="tone" data-seed="53"></div><figcaption>Before</figcaption></figure><figure><div class="sw" data-sw="tone" data-seed="53" data-after></div><figcaption>After the series</figcaption></figure></div>
+            <h3>Uneven tone</h3>
+            <p class="sub">Medical-grade peel · series</p>
+            <p class="consent">Illustration, not a client photo. Real before-and-after photos are shown only with written consent.</p>
+          </li>
+          <li class="ccard ccard-review" style="--i:7" role="group" aria-roledescription="slide" aria-label="8 of 8">
+            <p class="ccard-tag"><span>Client review</span><em>Placeholder</em></p>
+            <blockquote><p><span class="placeholder">[ADD real review]</span> A verified client review goes here, word for word.</p></blockquote>
+            <p class="who">[First name] · Consult and plan · [Month year]</p>
+            <p class="consent">Published with permission. Source: <span class="placeholder">[ADD link to the original review]</span></p>
+          </li>
+        </ul>
+      </div>
+      <div class="dots js-cyl-dots" role="group" aria-label="Choose a card">
+        <button type="button" aria-label="Card 1" aria-current="true"></button><button type="button" aria-label="Card 2"></button><button type="button" aria-label="Card 3"></button><button type="button" aria-label="Card 4"></button><button type="button" aria-label="Card 5"></button><button type="button" aria-label="Card 6"></button><button type="button" aria-label="Card 7"></button><button type="button" aria-label="Card 8"></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPARISON -->
+  <section class="compare" id="compare" aria-labelledby="compare-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Comparison</p>
+        <h2 id="compare-title">How is this different from a package deal?</h2>
+        <p>Package pressure on one side, a plan you take home on the other.</p>
+      </div>
+      <div class="split js-split">
+        <div class="split-paper old" aria-hidden="true"></div>
+        <div class="split-paper new" aria-hidden="true"></div>
+        <h3 class="split-head old">Package pressure</h3>
+        <h3 class="split-head new">A plan you take home</h3>
+        <div class="split-row">
+          <div class="split-cell old"><span class="chip">Package pressure</span><p class="cell-topic">Paying</p><p>You're asked to pay at the first visit, before you've had time to think.</p></div>
+          <div class="split-cell new"><span class="chip">With Velour</span><p class="cell-topic" aria-hidden="true">Paying</p><p>The consult is free. You decide after reading your plan at home.</p></div>
+        </div>
+        <div class="split-row">
+          <div class="split-cell old"><span class="chip">Package pressure</span><p class="cell-topic">What you get</p><p>Whatever package is on offer this month.</p></div>
+          <div class="split-cell new"><span class="chip">With Velour</span><p class="cell-topic" aria-hidden="true">What you get</p><p>Treatments chosen for your face, your goals and your budget.</p></div>
+        </div>
+        <div class="split-row">
+          <div class="split-cell old"><span class="chip">Package pressure</span><p class="cell-topic">How much</p><p>A set amount, because that's what the package includes.</p></div>
+          <div class="split-cell new"><span class="chip">With Velour</span><p class="cell-topic" aria-hidden="true">How much</p><p>Start conservative. Add more at the check-in only if you want it.</p></div>
+        </div>
+        <div class="split-row">
+          <div class="split-cell old"><span class="chip">Package pressure</span><p class="cell-topic">Price</p><p>A bundle price that's good today only.</p></div>
+          <div class="split-cell new"><span class="chip">With Velour</span><p class="cell-topic" aria-hidden="true">Price</p><p>Every cost written down, per unit or per syringe.</p></div>
+        </div>
+        <div class="split-row">
+          <div class="split-cell old"><span class="chip">Package pressure</span><p class="cell-topic">Afterwards</p><p>Rebook at the front desk on your way out.</p></div>
+          <div class="split-cell new"><span class="chip">With Velour</span><p class="cell-topic" aria-hidden="true">Afterwards</p><p>A two-week check-in to review the result and adjust.</p></div>
+        </div>
+        <div class="split-row">
+          <div class="split-cell old"><span class="chip">Package pressure</span><p class="cell-topic">Who you see</p><p>A coordinator for the pitch, someone else for the needle.</p></div>
+          <div class="split-cell new"><span class="chip">With Velour</span><p class="cell-topic" aria-hidden="true">Who you see</p><p>The same nurse injector at every visit.</p></div>
+        </div>
+        <div class="split-handle js-split-handle" role="slider" tabindex="0" aria-label="Comparison divider" aria-valuemin="28" aria-valuemax="72" aria-valuenow="50" aria-valuetext="Even split">
+          <span class="split-grip" aria-hidden="true"><svg width="22" height="14" viewBox="0 0 22 14"><path d="M6 2 1 7l5 5M16 2l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </div>
+      <p class="hint split-hint"><svg width="26" height="10" viewBox="0 0 26 10" aria-hidden="true"><path d="M1 5h23m-4-4 4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Drag the divider to give either side more room</p>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="pricing" id="pricing" aria-labelledby="pricing-title">
+    <div class="wrap">
+      <div class="pricing-top">
+        <div class="sec-head">
+          <p class="eyebrow">Pricing</p>
+          <h2 id="pricing-title">What does it cost?</h2>
+          <p>Starting prices for our most-booked treatments. Your written plan shows your exact total before you agree to anything.</p>
+        </div>
+        <div>
+          <div class="toggle js-price-toggle" role="group" aria-label="Show prices">
+            <button type="button" data-mode="visit" aria-pressed="true">Per visit</button>
+            <button type="button" data-mode="monthly" aria-pressed="false">Monthly</button>
+          </div>
+          <p class="sr-only js-price-status" aria-live="polite"></p>
+        </div>
+      </div>
+      <ul class="prices">
+        <li class="price-card">
+          <div class="tilt"><div class="pc-inner">
+            <article class="face front">
+              <p class="kicker">Start here</p>
+              <h3>Consult with a nurse injector</h3>
+              <p class="treats">Talk through your goals. Leave with a written plan.</p>
+              <p class="amount"><b>$0</b><span>Free, with no obligation</span></p>
+              <a class="btn btn-primary btn-sm" href="#book">Book a free consult</a>
+              <span class="glare" aria-hidden="true"></span>
+            </article>
+            <article class="face back">
+              <p class="kicker">Start here</p>
+              <h3>Consult with a nurse injector</h3>
+              <p class="treats">Talk through your goals. Leave with a written plan.</p>
+              <p class="amount"><b>$0</b><span>Still free. Nothing to split.</span></p>
+              <a class="btn btn-primary btn-sm" href="#book">Book a free consult</a>
+              <span class="glare" aria-hidden="true"></span>
+            </article>
+          </div></div>
+        </li>
+        <li class="price-card">
+          <div class="tilt"><div class="pc-inner">
+            <article class="face front">
+              <p class="kicker">Injectable</p>
+              <h3>Neurotoxin</h3>
+              <p class="treats">Forehead lines, frown lines, crow's feet.</p>
+              <p class="amount"><b><small>from</small>$12</b><span>per unit <span class="verify">[VERIFY]</span></span></p>
+              <a class="btn btn-quiet btn-sm" href="#book">Ask at your free consult</a>
+              <span class="glare" aria-hidden="true"></span>
+            </article>
+            <article class="face back">
+              <p class="kicker">Injectable</p>
+              <h3>Neurotoxin</h3>
+              <p class="treats">Example: a 20-unit visit split over 12 payments.</p>
+              <p class="amount"><b><small>from</small>$20<small>/mo</small></b><span>subject to approval <span class="verify">[VERIFY]</span></span></p>
+              <a class="btn btn-quiet btn-sm" href="#book">Ask at your free consult</a>
+              <span class="glare" aria-hidden="true"></span>
+            </article>
+          </div></div>
+        </li>
+        <li class="price-card">
+          <div class="tilt"><div class="pc-inner">
+            <article class="face front">
+              <p class="kicker">Injectable</p>
+              <h3>Dermal filler</h3>
+              <p class="treats">Lips, cheeks, under-eye hollows, jawline.</p>
+              <p class="amount"><b><small>from</small>$650</b><span>per 1 mL syringe <span class="verify">[VERIFY]</span></span></p>
+              <a class="btn btn-quiet btn-sm" href="#book">Ask at your free consult</a>
+              <span class="glare" aria-hidden="true"></span>
+            </article>
+            <article class="face back">
+              <p class="kicker">Injectable</p>
+              <h3>Dermal filler</h3>
+              <p class="treats">Example: one syringe split over 12 payments.</p>
+              <p class="amount"><b><small>from</small>$55<small>/mo</small></b><span>subject to approval <span class="verify">[VERIFY]</span></span></p>
+              <a class="btn btn-quiet btn-sm" href="#book">Ask at your free consult</a>
+              <span class="glare" aria-hidden="true"></span>
+            </article>
+          </div></div>
+        </li>
+        <li class="price-card">
+          <div class="tilt"><div class="pc-inner">
+            <article class="face front">
+              <p class="kicker">Skin</p>
+              <h3>Skin treatments</h3>
+              <p class="treats">Microneedling and medical-grade peels.</p>
+              <p class="amount"><b><small>from</small>$175</b><span>per session <span class="verify">[VERIFY]</span></span></p>
+              <a class="btn btn-quiet btn-sm" href="#book">Ask at your free consult</a>
+              <span class="glare" aria-hidden="true"></span>
+            </article>
+            <article class="face back">
+              <p class="kicker">Skin</p>
+              <h3>Skin treatments</h3>
+              <p class="treats">Example: one session split over 12 payments.</p>
+              <p class="amount"><b><small>from</small>$15<small>/mo</small></b><span>subject to approval <span class="verify">[VERIFY]</span></span></p>
+              <a class="btn btn-quiet btn-sm" href="#book">Ask at your free consult</a>
+              <span class="glare" aria-hidden="true"></span>
+            </article>
+          </div></div>
+        </li>
+      </ul>
+      <p class="price-note">All prices are starting points and are confirmed on your written plan. Monthly payments run through a financing partner and need approval <span class="verify">[VERIFY provider and terms]</span>.</p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq" id="faq" aria-labelledby="faq-title">
+    <div class="wrap faq-grid">
+      <div class="sec-head">
+        <p class="eyebrow">Questions</p>
+        <h2 id="faq-title">What do people ask before booking?</h2>
+        <p>Anything else, ask at your free consult. There's no charge for the conversation.</p>
+        <a class="btn btn-quiet" href="#book">Book a free consult</a>
+      </div>
+      <div class="acc">
+        <div class="acc-item">
+          <h3><button class="acc-btn" type="button" aria-expanded="true" aria-controls="faq-1" id="faq-1-btn">Does it hurt?<span class="acc-icon" aria-hidden="true"></span></button></h3>
+          <div class="acc-panel" id="faq-1" role="region" aria-labelledby="faq-1-btn"><div class="acc-body"><p>Most people describe injections as a quick pinch and some pressure. We offer numbing cream, and many fillers contain a local anesthetic <span class="verify">[VERIFY]</span>. You can ask to pause at any point.</p></div></div>
+        </div>
+        <div class="acc-item">
+          <h3><button class="acc-btn" type="button" aria-expanded="false" aria-controls="faq-2" id="faq-2-btn">How long do results last?<span class="acc-icon" aria-hidden="true"></span></button></h3>
+          <div class="acc-panel" id="faq-2" role="region" aria-labelledby="faq-2-btn" hidden><div class="acc-body"><p>It depends on the treatment and on you. As a general guide, neurotoxin lasts about three to four months and filler six to eighteen months <span class="verify">[VERIFY]</span>. Your plan says what to expect for each step. We don't promise a set result.</p></div></div>
+        </div>
+        <div class="acc-item">
+          <h3><button class="acc-btn" type="button" aria-expanded="false" aria-controls="faq-3" id="faq-3-btn">What's the downtime?<span class="acc-icon" aria-hidden="true"></span></button></h3>
+          <div class="acc-panel" id="faq-3" role="region" aria-labelledby="faq-3-btn" hidden><div class="acc-body"><p>Many people go back to work the same day. Redness, swelling or small bruises can last a few days, depending on the treatment <span class="verify">[VERIFY]</span>. Your injector tells you what to expect before you book, and you take home written aftercare.</p></div></div>
+        </div>
+        <div class="acc-item">
+          <h3><button class="acc-btn" type="button" aria-expanded="false" aria-controls="faq-4" id="faq-4-btn">Who does the treatment?<span class="acc-icon" aria-hidden="true"></span></button></h3>
+          <div class="acc-panel" id="faq-4" role="region" aria-labelledby="faq-4-btn" hidden><div class="acc-body"><p>A licensed nurse injector, working under a medical director <span class="verify">[VERIFY names and licenses]</span>. The injector you meet at your consult is the one who treats you.</p></div></div>
+        </div>
+        <div class="acc-item">
+          <h3><button class="acc-btn" type="button" aria-expanded="false" aria-controls="faq-5" id="faq-5-btn">Can I pay monthly?<span class="acc-icon" aria-hidden="true"></span></button></h3>
+          <div class="acc-panel" id="faq-5" role="region" aria-labelledby="faq-5-btn" hidden><div class="acc-body"><p>Yes. Most treatments can be split into monthly payments through a financing partner, subject to approval <span class="verify">[VERIFY provider and terms]</span>. Your written plan shows the full price and the monthly option side by side.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="final" id="book" aria-labelledby="book-title">
+    <div class="wrap final-grid">
+      <div class="stage stage-final" data-stage="final" data-drop data-inset="14 14 54 14" tabindex="0" role="group" aria-roledescription="3D illustration" aria-label="One drop falls in slow motion from the dropper into the stone dish. Left and right arrow keys turn it.">
+        <svg class="stage-art" aria-hidden="true" focusable="false"><use href="#scene-art"/></svg>
+        <div class="stage-ui">
+          <p class="stage-tag"><i>Illustration</i><span>Slow motion</span></p>
+          <button class="stage-btn" type="button" data-action="drop">Watch again</button>
+        </div>
+      </div>
+      <div class="final-copy">
+        <p class="eyebrow">Free consult · Scottsdale</p>
+        <h2 id="book-title">Ready to see your plan?</h2>
+        <p>Book a free consult with a nurse injector. You leave with a written plan and every cost, and you decide later.</p>
+        <form class="book-form" id="book-form" novalidate>
+          <div class="field">
+            <label for="f-name">First name</label>
+            <input id="f-name" name="name" type="text" autocomplete="given-name" required aria-describedby="f-name-err">
+            <p class="err" id="f-name-err"></p>
+          </div>
+          <div class="field">
+            <label for="f-contact">Phone or email</label>
+            <input id="f-contact" name="contact" type="text" autocomplete="email" inputmode="email" required aria-describedby="f-contact-err">
+            <p class="err" id="f-contact-err"></p>
+          </div>
+          <div class="field">
+            <label for="f-topic">What would you like to talk about?</label>
+            <select id="f-topic" name="topic">
+              <option>Not sure yet</option>
+              <option>Lines and wrinkles</option>
+              <option>Lips and volume</option>
+              <option>Skin texture and tone</option>
+            </select>
+          </div>
+          <button class="btn btn-primary" type="submit">Book a free consult</button>
+          <p class="form-note">Concept site: this form doesn't send anything.</p>
+          <p class="form-result" id="form-result" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-meta">
+      <a class="brand" href="#top"><b>Velour</b></a>
+      <p>Velour Aesthetics · Scottsdale, Arizona · <span class="placeholder">[ADD address and phone]</span></p>
+    </div>
+    <div class="foot-meta">
+      <p>Treatments are done by licensed nurse injectors under a medical director <span class="verify">[VERIFY]</span>. Results vary. Nothing on this page is medical advice.</p>
+      <p>The 3D scenes and before-and-after images on this page are illustrations.</p>
+      <p class="credit">Concept site. Design and build by [YOUR STUDIO].</p>
+    </div>
+  </div>
+</footer>
+
+<div class="cta-bar js-cta-bar">
+  <p>Free consult with a nurse injector</p>
+  <a class="btn btn-primary" href="#book">Book</a>
+</div>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="scene-art" viewBox="0 0 400 340">
+    <defs>
+      <radialGradient id="ga-shadow"><stop offset="0" stop-color="#6E443A" stop-opacity=".30"/><stop offset="1" stop-color="#6E443A" stop-opacity="0"/></radialGradient>
+      <linearGradient id="ga-glass" x1="0" x2="1"><stop offset="0" stop-color="#FFFFFF" stop-opacity=".9"/><stop offset=".25" stop-color="#F3E9E4" stop-opacity=".55"/><stop offset=".72" stop-color="#E9DCD6" stop-opacity=".5"/><stop offset="1" stop-color="#D5C1B8" stop-opacity=".85"/></linearGradient>
+      <linearGradient id="ga-serum" x1="0" x2="1"><stop offset="0" stop-color="#EECBBD"/><stop offset=".55" stop-color="#E2B2A1"/><stop offset="1" stop-color="#C98B7A"/></linearGradient>
+      <linearGradient id="ga-clay" x1="0" x2="1"><stop offset="0" stop-color="#DFA898"/><stop offset=".5" stop-color="#C98B7A"/><stop offset="1" stop-color="#A56C5D"/></linearGradient>
+      <linearGradient id="ga-white" x1="0" x2="1"><stop offset="0" stop-color="#FBF8F5"/><stop offset="1" stop-color="#D9CDC6"/></linearGradient>
+      <linearGradient id="ga-stone" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E3D8D1"/><stop offset="1" stop-color="#C6B7AE"/></linearGradient>
+      <radialGradient id="ga-pool" cx=".45" cy=".4" r=".7"><stop offset="0" stop-color="#F7E6DD"/><stop offset="1" stop-color="#DDB3A3"/></radialGradient>
+      <radialGradient id="ga-drop" cx=".35" cy=".35" r=".8"><stop offset="0" stop-color="#FFFFFF"/><stop offset=".35" stop-color="#F1D4C8"/><stop offset="1" stop-color="#C98B7A"/></radialGradient>
+    </defs>
+    <ellipse cx="160" cy="298" rx="82" ry="13" fill="url(#ga-shadow)"/>
+    <ellipse cx="292" cy="312" rx="108" ry="18" fill="url(#ga-shadow)"/>
+    <ellipse cx="62" cy="318" rx="20" ry="4" fill="url(#ga-shadow)"/>
+    <path d="M120 294 Q112 294 112 284 L112 196 Q112 166 142 160 L144 152 L144 140 L176 140 L176 152 L178 160 Q208 166 208 196 L208 284 Q208 294 200 294 Z" fill="url(#ga-glass)" stroke="#CDB8AE" stroke-opacity=".7"/>
+    <path d="M124 290 Q118 290 118 282 L118 232 L202 232 L202 282 Q202 290 196 290 Z" fill="url(#ga-serum)" opacity=".85"/>
+    <rect x="121" y="206" width="78" height="54" rx="2" fill="#F4EDE8"/>
+    <rect x="121" y="210" width="78" height="1.6" fill="#C98B7A"/>
+    <rect x="121" y="255" width="78" height="1.6" fill="#C98B7A"/>
+    <text x="160" y="235" text-anchor="middle" font-family="Gloock, Georgia, serif" font-size="15" fill="#221C1E">Velour</text>
+    <text x="160" y="248" text-anchor="middle" font-family="Albert Sans, Arial, sans-serif" font-size="5.6" letter-spacing="1.2" fill="#5B4E51">SERUM NO. 3</text>
+    <path d="M126 200 Q123 240 126 282" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" opacity=".7" fill="none"/>
+    <rect x="139" y="118" width="42" height="26" rx="8" fill="url(#ga-white)"/>
+    <path d="M147 120 C145 96 150 76 160 76 C170 76 175 96 173 120 Z" fill="url(#ga-clay)"/>
+    <path d="M188 296 Q194 326 292 328 Q390 326 396 296 Z" fill="url(#ga-stone)"/>
+    <ellipse cx="292" cy="296" rx="104" ry="20" fill="#E9E0DA"/>
+    <ellipse cx="292" cy="297" rx="88" ry="15" fill="url(#ga-pool)"/>
+    <ellipse cx="292" cy="297" rx="40" ry="7" fill="none" stroke="#FFFFFF" stroke-opacity=".8"/>
+    <ellipse cx="292" cy="297" rx="64" ry="11" fill="none" stroke="#FFFFFF" stroke-opacity=".45"/>
+    <path d="M292 192 C292 192 281 212 281 220 A11 11 0 0 0 303 220 C303 212 292 192 292 192 Z" fill="url(#ga-drop)"/>
+    <path d="M48 316 Q48 298 62 298 Q76 298 76 316 Z" fill="url(#ga-drop)"/>
+  </symbol>
+</svg>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script>
+(function () {
+  'use strict';
+
+  var doc = document.documentElement;
+  var $ = function (s, r) { return (r || document).querySelector(s); };
+  var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
+  var clamp = function (v, a, b) { return Math.min(b, Math.max(a, v)); };
+  var lerp = function (a, b, t) { return a + (b - a) * t; };
+  var reduce = doc.classList.contains('reduce');
+  var coarse = window.matchMedia && matchMedia('(pointer: coarse)').matches;
+  var hasG = typeof window.gsap !== 'undefined' && typeof window.ScrollTrigger !== 'undefined';
+  if (hasG) {
+    gsap.registerPlugin(ScrollTrigger);
+    ScrollTrigger.config({ ignoreMobileResize: true });
+  }
+  var navH = function () { return $('.nav').offsetHeight; };
+  var ctaBar = $('.js-cta-bar');
+  var bottomInset = function () {
+    if (!ctaBar || ctaBar.classList.contains('is-hidden')) return 0;
+    return getComputedStyle(ctaBar).display === 'none' ? 0 : ctaBar.offsetHeight;
+  };
+
+  /* =========================================================
+     3D: one serum set, one canvas, drawn into whichever stage is in view
+     ========================================================= */
+  var GL = (function () {
+    var canvas = document.getElementById('gl');
+    if (!window.THREE || !canvas) return null;
+    var renderer;
+    try {
+      renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true, alpha: true, powerPreference: 'high-performance' });
+    } catch (err) { return null; }
+    if (!renderer || !renderer.getContext()) return null;
+
+    var phone = coarse || Math.min(window.innerWidth, (screen && screen.width) || window.innerWidth) < 600;
+    renderer.outputEncoding = THREE.sRGBEncoding;
+    renderer.toneMapping = THREE.ACESFilmicToneMapping;
+    renderer.toneMappingExposure = 1.0;
+    renderer.physicallyCorrectLights = true;
+    renderer.setClearColor(0x000000, 0);
+    renderer.autoClear = false;
+    renderer.shadowMap.enabled = !phone;
+    renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, phone ? 1.5 : 2));
+
+    var C = function (hex) { return new THREE.Color(hex).convertSRGBToLinear(); };
+    var V2 = function (x, y) { return new THREE.Vector2(x, y); };
+    var scene = new THREE.Scene();
+    var camera = new THREE.PerspectiveCamera(24, 1, 0.1, 100);
+
+    /* studio environment: a white room with softboxes, baked with PMREM */
+    (function () {
+      var room = new THREE.Scene();
+      var shell = new THREE.Mesh(new THREE.BoxGeometry(16, 10, 16), new THREE.MeshBasicMaterial({ color: C('#E6DBD5'), side: THREE.BackSide }));
+      shell.position.y = 4;
+      room.add(shell);
+      var box = new THREE.BoxGeometry(1, 1, 1);
+      var soft = function (w, h, x, y, z, k, tint) {
+        var m = new THREE.MeshBasicMaterial({ color: C(tint || '#FFFFFF').multiplyScalar(k) });
+        var b = new THREE.Mesh(box, m);
+        b.scale.set(w, h, 0.05); b.position.set(x, y, z); b.lookAt(0, 1, 0);
+        room.add(b);
+      };
+      soft(6, 4, 0, 7.6, 1.5, 5);
+      soft(3, 5, -7.2, 3.5, 2.5, 4);
+      soft(3, 4, 7.2, 3, 0, 2.2, '#FFE8DE');
+      soft(8, 2.4, 0, 2.4, -7.6, 1.6);
+      soft(5, 2.2, 1.5, 1.8, 7.6, 2);
+      var pm = new THREE.PMREMGenerator(renderer);
+      scene.environment = pm.fromScene(room, 0.035).texture;
+      pm.dispose();
+    })();
+
+    var hemi = new THREE.HemisphereLight(C('#FFF9F4'), C('#D3B9AE'), 1.15);
+    scene.add(hemi);
+    var key = new THREE.DirectionalLight(C('#FFF3EA'), 2.3);
+    key.position.set(-1.6, 7.2, 2.6);
+    key.castShadow = renderer.shadowMap.enabled;
+    key.shadow.mapSize.set(1024, 1024);
+    key.shadow.camera.left = -3.4; key.shadow.camera.right = 3.4; key.shadow.camera.top = 3.4; key.shadow.camera.bottom = -3.4;
+    key.shadow.camera.near = 1; key.shadow.camera.far = 14;
+    key.shadow.bias = -0.0005; key.shadow.normalBias = 0.02;
+    scene.add(key, key.target);
+
+    var ground = new THREE.Mesh(new THREE.PlaneGeometry(14, 14), new THREE.ShadowMaterial({ color: C('#6E443A'), opacity: 0.1 }));
+    ground.rotation.x = -Math.PI / 2; ground.position.y = 0.001; ground.receiveShadow = true;
+    scene.add(ground);
+
+    /* materials: white clay, stone, rose clay, and one glass/water accent */
+    var glassBase = { metalness: 0, roughness: 0.06, clearcoat: 1, clearcoatRoughness: 0.05, transparent: true, envMapIntensity: 1.4 };
+    var mGlass = new THREE.MeshPhysicalMaterial(Object.assign({ color: C('#F7F0EC'), depthWrite: false }, glassBase, phone ? { transmission: 0, opacity: 0.38 } : { transmission: 0.84, opacity: 1 }));
+    var mDrop = new THREE.MeshPhysicalMaterial(Object.assign({ color: C('#E2A491') }, glassBase, { envMapIntensity: 1.8 }, phone ? { transmission: 0, opacity: 0.86 } : { transmission: 0.3, opacity: 1 }));
+    var mSerum = new THREE.MeshStandardMaterial({ color: C('#E3B5A4'), roughness: 0.34, transparent: true, opacity: 0.9 });
+    var mClay = new THREE.MeshStandardMaterial({ color: C('#C98B7A'), roughness: 0.62 });
+    var mWhite = new THREE.MeshStandardMaterial({ color: C('#F2EBE6'), roughness: 0.72 });
+    var stoneTex = (function () {
+      var c = document.createElement('canvas'); c.width = c.height = 256;
+      var g = c.getContext('2d'), r = 7;
+      var rnd = function () { r = (r * 16807) % 2147483647; return r / 2147483647; };
+      g.fillStyle = '#CDBDB2'; g.fillRect(0, 0, 256, 256);
+      for (var i = 0; i < 2600; i++) {
+        var v = rnd();
+        g.fillStyle = v < 0.5 ? 'rgba(150,126,114,' + (0.08 + rnd() * 0.22) + ')' : 'rgba(250,244,240,' + (0.12 + rnd() * 0.3) + ')';
+        g.beginPath(); g.arc(rnd() * 256, rnd() * 256, 0.4 + rnd() * 1.3, 0, Math.PI * 2); g.fill();
+      }
+      var t = new THREE.CanvasTexture(c); t.encoding = THREE.sRGBEncoding; t.wrapS = t.wrapT = THREE.RepeatWrapping; t.repeat.set(6, 2);
+      return t;
+    })();
+    var mStone = new THREE.MeshStandardMaterial({ color: C('#FFFFFF'), map: stoneTex, roughness: 0.92 });
+    var mPool = new THREE.MeshPhysicalMaterial({ color: C('#E2B6A5'), roughness: 0.1, clearcoat: 1, clearcoatRoughness: 0.06, emissive: C('#F2A68F'), emissiveIntensity: 0 });
+
+    var arc = function (pts, cx, cy, r, a0, a1, n) {
+      for (var i = 0; i <= n; i++) { var a = a0 + (a1 - a0) * i / n; pts.push(V2(cx + Math.cos(a) * r, cy + Math.sin(a) * r)); }
+    };
+    var quad = function (pts, p0, p1, p2, n) {
+      for (var i = 1; i <= n; i++) { var t = i / n, u = 1 - t; pts.push(V2(u * u * p0.x + 2 * u * t * p1.x + t * t * p2.x, u * u * p0.y + 2 * u * t * p1.y + t * t * p2.y)); }
+    };
+    var castAll = function (o) { o.traverse(function (c) { if (c.isMesh) { c.castShadow = true; c.receiveShadow = true; } }); };
+
+    /* bottle */
+    var BR = 0.42, NECK = 0.15;
+    var bp = [V2(0, 0)];
+    arc(bp, BR - 0.07, 0.07, 0.07, -Math.PI / 2, 0, 8);
+    bp.push(V2(BR, 0.86));
+    quad(bp, V2(BR, 0.86), V2(BR, 1.13), V2(NECK + 0.02, 1.16), 14);
+    bp.push(V2(NECK, 1.2), V2(NECK, 1.3), V2(NECK + 0.025, 1.31), V2(NECK + 0.025, 1.36), V2(0, 1.36));
+    var glass = new THREE.Mesh(new THREE.LatheGeometry(bp, 72), mGlass);
+    glass.renderOrder = 3;
+    var sp = [V2(0, 0.035)];
+    arc(sp, BR - 0.1, 0.095, 0.06, -Math.PI / 2, 0, 6);
+    sp.push(V2(BR - 0.04, 0.7), V2(0, 0.7));
+    var serum = new THREE.Mesh(new THREE.LatheGeometry(sp, 60), mSerum);
+    serum.renderOrder = 1; serum.castShadow = true;
+    var labelCanvas = document.createElement('canvas');
+    labelCanvas.width = 1024; labelCanvas.height = 600;
+    var labelTex = new THREE.CanvasTexture(labelCanvas);
+    labelTex.encoding = THREE.sRGBEncoding;
+    labelTex.anisotropy = Math.min(8, renderer.capabilities.getMaxAnisotropy());
+    var LA = 1.8;
+    var label = new THREE.Mesh(new THREE.CylinderGeometry(BR + 0.005, BR + 0.005, 0.46, 64, 1, true, -LA / 2, LA), new THREE.MeshStandardMaterial({ map: labelTex, roughness: 0.78 }));
+    label.position.y = 0.46; label.renderOrder = 2; label.castShadow = true;
+    var bottle = new THREE.Group();
+    bottle.add(serum, label, glass);
+
+    /* dropper: white clay collar, rose clay bulb, glass pipette */
+    var cp = [V2(0, 0), V2(0.17, 0)];
+    arc(cp, 0.17, 0.025, 0.025, -Math.PI / 2, 0, 5);
+    cp.push(V2(0.195, 0.17));
+    arc(cp, 0.15, 0.17, 0.045, 0, Math.PI / 2, 7);
+    cp.push(V2(0, 0.215));
+    var collar = new THREE.Mesh(new THREE.LatheGeometry(cp, 56), mWhite);
+    var bb = [V2(0, 0.2), V2(0.1, 0.2), V2(0.112, 0.28), V2(0.122, 0.42)];
+    arc(bb, 0, 0.47, 0.122, 0, Math.PI / 2, 12);
+    bb[bb.length - 1] = V2(0, 0.592);
+    var bulb = new THREE.Mesh(new THREE.LatheGeometry(bb, 48), mClay);
+    var pp = [V2(0, -0.8), V2(0.016, -0.8), V2(0.03, -0.7), V2(0.044, -0.5), V2(0.046, 0), V2(0, 0)];
+    var pipette = new THREE.Mesh(new THREE.LatheGeometry(pp, 24), mGlass);
+    pipette.renderOrder = 4;
+    var dropper = new THREE.Group();
+    dropper.add(collar, bulb, pipette);
+    collar.castShadow = bulb.castShadow = false;
+
+    /* stone dish with a shallow pool */
+    var dp = [V2(0, 0), V2(0.6, 0)];
+    arc(dp, 0.6, 0.06, 0.06, -Math.PI / 2, 0, 6);
+    quad(dp, V2(0.66, 0.06), V2(0.8, 0.08), V2(0.84, 0.165), 8);
+    arc(dp, 0.81, 0.165, 0.03, 0, Math.PI, 8);
+    quad(dp, V2(0.78, 0.165), V2(0.72, 0.08), V2(0.56, 0.075), 8);
+    dp.push(V2(0, 0.075));
+    var dishMesh = new THREE.Mesh(new THREE.LatheGeometry(dp, 72), mStone);
+    castAll(dishMesh);
+    var pool = new THREE.Mesh(new THREE.CircleGeometry(0.62, 64), mPool);
+    pool.rotation.x = -Math.PI / 2; pool.position.y = 0.09; pool.receiveShadow = true;
+    var rippleMat = new THREE.ShaderMaterial({
+      transparent: true, depthWrite: false,
+      uniforms: { uT: { value: 9 }, uColor: { value: new THREE.Color(1, 0.99, 0.97) } },
+      vertexShader: 'varying vec2 vUv; void main(){ vUv = uv; gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0); }',
+      fragmentShader: 'uniform float uT; uniform vec3 uColor; varying vec2 vUv;' +
+        'void main(){ float r = length(vUv - 0.5) * 2.0; float a = 0.0;' +
+        'for (int i = 0; i < 3; i++) { float t = uT - float(i) * 0.22; if (t > 0.0) { float rad = t * 0.85; float w = 0.03 + t * 0.035;' +
+        'a += smoothstep(w, 0.0, abs(r - rad)) * (1.0 - smoothstep(0.0, 1.15, t)) * (1.0 - float(i) * 0.28); } }' +
+        'a *= 1.0 - smoothstep(0.9, 1.0, r); gl_FragColor = vec4(uColor, clamp(a, 0.0, 1.0) * 0.75); }'
+    });
+    var ripple = new THREE.Mesh(new THREE.CircleGeometry(0.62, 64), rippleMat);
+    ripple.rotation.x = -Math.PI / 2; ripple.position.y = 0.092; ripple.renderOrder = 5;
+
+    var gradTex = function (stops) {
+      var c = document.createElement('canvas'); c.width = c.height = 128;
+      var g = c.getContext('2d'), grd = g.createRadialGradient(64, 64, 0, 64, 64, 64);
+      stops.forEach(function (s) { grd.addColorStop(s[0], s[1]); });
+      g.fillStyle = grd; g.fillRect(0, 0, 128, 128);
+      var t = new THREE.CanvasTexture(c); t.encoding = THREE.sRGBEncoding; return t;
+    };
+    var shadowTex = gradTex([[0, 'rgba(96,58,48,0.62)'], [0.42, 'rgba(96,58,48,0.26)'], [1, 'rgba(96,58,48,0)']]);
+    var glowTex = gradTex([[0, 'rgba(236,160,136,1)'], [0.4, 'rgba(236,166,142,0.55)'], [1, 'rgba(236,166,142,0)']]);
+    var flat = new THREE.PlaneGeometry(1, 1); flat.rotateX(-Math.PI / 2);
+    var contact = function (opacity) {
+      return new THREE.Mesh(flat, new THREE.MeshBasicMaterial({ map: shadowTex, transparent: true, depthWrite: false, toneMapped: false, opacity: opacity }));
+    };
+    var glow = new THREE.Mesh(flat, new THREE.MeshBasicMaterial({ map: glowTex, transparent: true, depthWrite: false, toneMapped: false, opacity: 0 }));
+    glow.scale.setScalar(3.1); glow.position.y = 0.004; glow.renderOrder = -1;
+
+    var dish = new THREE.Group();
+    dish.add(dishMesh, pool, ripple, glow);
+
+    /* droplets: three instances of one teardrop */
+    var tp = [];
+    for (var ti = 0; ti <= 26; ti++) {
+      var tt = ti / 26 * Math.PI;
+      tp.push(V2(Math.max(0, 0.088 * Math.sin(tt) * Math.pow(Math.cos(tt / 2), 0.75)), 0.1 - 0.1 * Math.cos(tt)));
+    }
+    var drops = new THREE.InstancedMesh(new THREE.LatheGeometry(tp, 32), mDrop, 3);
+    drops.castShadow = true; drops.renderOrder = 4;
+    drops.instanceMatrix.setUsage(THREE.DynamicDrawUsage);
+    var dropShadows = new THREE.InstancedMesh(flat, new THREE.MeshBasicMaterial({ map: shadowTex, transparent: true, depthWrite: false, toneMapped: false, opacity: 0.8 }), 3);
+    dropShadows.instanceMatrix.setUsage(THREE.DynamicDrawUsage);
+
+    var bottleShadow = contact(0.9), dishShadow = contact(0.85), dropperShadow = contact(0);
+    [bottleShadow, dishShadow, dropperShadow, dropShadows].forEach(function (m) { m.renderOrder = -2; });
+
+    var rig = new THREE.Group(), turnG = new THREE.Group();
+    rig.add(turnG);
+    turnG.add(bottle, dropper, dish, drops, dropShadows, bottleShadow, dishShadow, dropperShadow);
+    scene.add(rig);
+
+    /* label artwork */
+    var nameNow = '';
+    var spaced = function (g, text, x, y, spacing) {
+      var w = 0, i;
+      for (i = 0; i < text.length; i++) w += g.measureText(text[i]).width + (i < text.length - 1 ? spacing : 0);
+      var cx = x - w / 2;
+      g.textAlign = 'left';
+      for (i = 0; i < text.length; i++) { g.fillText(text[i], cx, y); cx += g.measureText(text[i]).width + spacing; }
+      g.textAlign = 'center';
+    };
+    function drawLabel() {
+      var g = labelCanvas.getContext('2d'), W = labelCanvas.width, H = labelCanvas.height;
+      g.fillStyle = '#F5EEE9'; g.fillRect(0, 0, W, H);
+      g.fillStyle = '#C98B7A'; g.fillRect(0, 34, W, 5); g.fillRect(0, H - 40, W, 5);
+      g.textAlign = 'center'; g.textBaseline = 'alphabetic';
+      g.fillStyle = '#221C1E'; g.font = '400 118px Gloock, Georgia, serif';
+      g.fillText('Velour', W / 2, 176);
+      g.fillStyle = '#5B4E51'; g.font = '600 25px "Albert Sans", Arial, sans-serif';
+      spaced(g, 'AESTHETICS  ·  SCOTTSDALE', W / 2, 226, 5);
+      g.fillStyle = 'rgba(34,28,30,0.22)'; g.fillRect(W / 2 - 150, 268, 300, 2);
+      g.fillStyle = '#8A4F42'; g.font = '500 34px "Albert Sans", Arial, sans-serif';
+      g.fillText('Prepared for', W / 2, 334);
+      var nm = nameNow || 'you', size = 104;
+      g.fillStyle = '#221C1E';
+      do { g.font = '400 ' + size + 'px Gloock, Georgia, serif'; size -= 4; } while (g.measureText(nm).width > 560 && size > 40);
+      g.fillText(nm, W / 2, 448);
+      g.fillStyle = 'rgba(34,28,30,0.55)'; g.font = '600 22px "Albert Sans", Arial, sans-serif';
+      spaced(g, 'SERUM NO. 3   ·   30 ML', W / 2, 516, 4);
+      labelTex.needsUpdate = true;
+      dirty = true;
+    }
+
+    /* springs: everything physical settles with one integrator */
+    var sp1 = function (v, k, z) { return { x: v, v: 0, t: v, k: k, z: z }; };
+    var LK = reduce ? 26 : 52, LZ = reduce ? 1 : 0.72;
+    var S = {
+      turn: sp1(0, reduce ? 24 : 34, reduce ? 1 : 0.84),
+      yaw: sp1(0, 20, 0.5), leanX: sp1(0, 36, 0.72), leanZ: sp1(0, 36, 0.72),
+      bx: sp1(-0.5, LK, LZ), bz: sp1(0, LK, LZ), bry: sp1(0, reduce ? 20 : 26, reduce ? 1 : 0.7),
+      dx: sp1(0.72, LK, LZ), dz: sp1(0.38, LK, LZ), ds: sp1(1, 60, reduce ? 1 : 0.6),
+      dsk: sp1(0, 170, 0.16), pool: sp1(0, 150, 0.12), glow: sp1(0, 9, 1), tilt: sp1(0, 70, 0.4),
+      cx: sp1(0, 24, 1), cy: sp1(1, 24, 1), cz: sp1(0, 24, 1), cw: sp1(3, 24, 1), ch: sp1(3, 24, 1)
+    };
+    var D = [0, 1, 2].map(function () {
+      return { x: sp1(0, LK, LZ), y: sp1(0, LK, LZ), z: sp1(0, LK, LZ), s: sp1(0, reduce ? 40 : 70, reduce ? 1 : 0.5), script: false };
+    });
+    var springs = Object.keys(S).map(function (k) { return S[k]; });
+    D.forEach(function (d) { springs.push(d.x, d.y, d.z, d.s); });
+
+    function stepSprings(dt) {
+      var moving = false, n = Math.max(1, Math.ceil(dt * 120)), h = dt / n;
+      for (var i = 0; i < springs.length; i++) {
+        var s = springs[i];
+        if (s.x === s.t && s.v === 0) continue;
+        var c = 2 * Math.sqrt(s.k) * s.z;
+        for (var j = 0; j < n; j++) { s.v += (s.k * (s.t - s.x) - c * s.v) * h; s.x += s.v * h; }
+        if (Math.abs(s.v) < 1e-4 && Math.abs(s.t - s.x) < 1e-4) { s.x = s.t; s.v = 0; } else moving = true;
+      }
+      return moving;
+    }
+
+    /* compositions in world space: [x, z]; frame = [cx, cy, cz, w, h] */
+    var HALF = Math.PI / 2;
+    var ST = {
+      hero:    { th: 0,    b: [-0.5, 0],     bry: 0,     d: [0.72, 0.38], ds: 1,    beads: [[1.52, 0.98, 1], [0.22, 1.05, 0.82]], A: 'script', glow: 0,    frame: [0.36, 1.32, 0.3, 2.85, 3.0] },
+      consult: { th: HALF, b: [-0.15, 0.2],  bry: -HALF, d: [1.15, -0.8], ds: 0.9,  beads: [[-1.0, 0.7, 1], [0.95, 0.75, 0.85]], A: 'hide', glow: 0,      frame: [0.05, 0.92, 0.15, 2.5, 2.05] },
+      plan:    { th: HALF, b: [-1.1, -0.45], bry: -HALF, d: [1.2, -0.55], ds: 0.85, row: true, glow: 0,                                    frame: [0.08, 0.86, 0.1, 3.6, 2.05] },
+      treat:   { th: HALF, b: [-1.05, -0.35], bry: -HALF, d: [0.32, 0.2], ds: 1,    beads: [[1.32, 0.72, 1], [-0.42, 0.98, 0.82]], A: 'script', glow: 0,  frame: [0.06, 1.3, 0.1, 3.25, 2.95] },
+      review:  { th: HALF, b: [-1.05, -0.35], bry: -HALF, d: [0.32, 0.2], ds: 1,    beads: [[1.32, 0.72, 1], [-0.42, 0.98, 0.82]], A: 'hide', glow: 1,    frame: [0.06, 0.9, 0.1, 3.2, 2.05] },
+      deal:    { th: 0,    b: [-1.65, -0.35], bry: 0,    d: [0, 0.25],    ds: 1.22, beads: [[1.5, 0.35, 1], [1.2, 0.9, 0.82]], A: 'hide', glow: 0.35,  frame: [-0.12, 0.8, 0.2, 4.7, 2.1] },
+      final:   { th: 0,    b: [-0.5, 0],     bry: 0,     d: [0.72, 0.38], ds: 1.05, beads: [[1.52, 0.98, 1], [0.22, 1.05, 0.82]], A: 'script', glow: 0,    frame: [0.36, 1.32, 0.3, 2.85, 3.0] }
+    };
+    var STEP_STATES = ['consult', 'plan', 'treat', 'review'];
+    var REST_Y = 1.22, LIFT_Y = 2.22, OVER_Y = 1.76, POOL_Y = 0.09;
+
+    var ext = { turn: 0, step: 0, pulse: 0 };
+    var anim = { lift: 0, over: 0, lower: 0, form: 0, fall: 0 };
+    var ripT = 9, ripSpeed = 1, dirty = true, lastOver = 0;
+
+    function applyTargets(name, side) {
+      var st = ST[name], th = st.th, c = Math.cos(th), s = Math.sin(th);
+      var L = function (X, Z) { return [X * c - Z * s, X * s + Z * c]; };
+      var b = L(st.b[0], st.b[1]), d = L(st.d[0], st.d[1]);
+      S.bx.t = b[0]; S.bz.t = b[1]; S.bry.t = side ? 0 : st.bry;
+      S.dx.t = d[0]; S.dz.t = d[1]; S.ds.t = st.ds; S.glow.t = st.glow;
+      S.cx.t = st.frame[0]; S.cy.t = st.frame[1]; S.cz.t = st.frame[2]; S.cw.t = st.frame[3]; S.ch.t = st.frame[4];
+      for (var i = 0; i < 3; i++) {
+        var dd = D[i];
+        dd.script = (i === 0 && st.A === 'script');
+        if (st.row) {
+          var p = L(-0.62 + i * 0.72, 0.72);
+          dd.x.t = p[0]; dd.z.t = p[1]; dd.y.t = 0; dd.s.t = 1.5;
+        } else if (i === 0) {
+          dd.x.t = d[0]; dd.z.t = d[1]; dd.y.t = POOL_Y * st.ds; dd.s.t = 0;
+        } else {
+          var bd = st.beads[i - 1], q = L(bd[0], bd[1]);
+          dd.x.t = q[0]; dd.z.t = q[1]; dd.y.t = 0; dd.s.t = bd[2];
+        }
+      }
+    }
+
+    var dummy = new THREE.Object3D();
+    function apply(dt) {
+      rig.rotation.x = S.leanX.x; rig.rotation.z = S.leanZ.x;
+      turnG.rotation.y = S.turn.x + S.yaw.x;
+      bottle.position.set(S.bx.x, 0, S.bz.x); bottle.rotation.y = S.bry.x;
+      var ds = S.ds.x, k = S.dsk.x;
+      dish.position.set(S.dx.x, 0, S.dz.x);
+      dish.scale.set(ds * (1 + k * 0.35), ds * (1 - k), ds * (1 + k * 0.35));
+      pool.position.y = POOL_Y + S.pool.x; ripple.position.y = pool.position.y + 0.002;
+      rippleMat.uniforms.uT.value = ripT;
+      var g = clamp(S.glow.x * 0.8 + ext.pulse * 0.6, 0, 1);
+      glow.material.opacity = g * 0.85; mPool.emissiveIntensity = g * 1.1;
+      bottleShadow.position.set(S.bx.x, 0.003, S.bz.x); bottleShadow.scale.setScalar(1.4);
+      dishShadow.position.set(S.dx.x, 0.003, S.dz.x); dishShadow.scale.setScalar(2.25 * ds);
+
+      var o = anim.over;
+      var px = lerp(S.bx.x, S.dx.x, o), pz = lerp(S.bz.x, S.dz.x, o);
+      var py = lerp(REST_Y, LIFT_Y, anim.lift);
+      py = lerp(py, OVER_Y, anim.lower) + Math.sin(o * Math.PI) * 0.08;
+      var vo = dt > 0 ? (o - lastOver) / dt : 0; lastOver = o;
+      S.tilt.t = clamp(-vo * 0.09, -0.22, 0.22);
+      dropper.position.set(px, py, pz); dropper.rotation.z = S.tilt.x;
+      var air = Math.max(anim.lift, o);
+      dropperShadow.position.set(px, 0.003, pz);
+      dropperShadow.scale.setScalar(0.5 + (py - REST_Y) * 0.25);
+      dropperShadow.material.opacity = 0.32 * air;
+
+      for (var i = 0; i < 3; i++) {
+        var d = D[i], sx, sy, y, x, z;
+        if (d.script) {
+          var f = anim.form, fl = anim.fall;
+          var s = f > 0.001 ? (0.3 + 0.7 * f) : 0;
+          sy = s * (1 + 0.16 * f) * (fl > 0 ? 1.24 : 1); sx = s * (fl > 0 ? 0.86 : 1);
+          var hang = py - 0.8 - 0.2 * sy;
+          x = px; z = pz; y = lerp(hang, POOL_Y * ds, fl);
+          d.x.x = d.x.t = x; d.y.x = d.y.t = y; d.z.x = d.z.t = z; d.s.x = d.s.t = s;
+          d.x.v = d.y.v = d.z.v = d.s.v = 0;
+        } else {
+          x = d.x.x; y = d.y.x; z = d.z.x; sx = Math.max(0, d.s.x); sy = sx;
+        }
+        dummy.position.set(x, y, z); dummy.rotation.set(0, 0, 0); dummy.scale.set(sx || 1e-5, sy || 1e-5, sx || 1e-5); dummy.updateMatrix();
+        drops.setMatrixAt(i, dummy.matrix);
+        var fade = clamp(1 - y * 0.55, 0.25, 1);
+        var ss = 0.36 * Math.max(sx, 0) * fade;
+        dummy.position.set(x, 0.004, z); dummy.scale.set(ss || 1e-5, 1, ss || 1e-5); dummy.updateMatrix();
+        dropShadows.setMatrixAt(i, dummy.matrix);
+      }
+      drops.instanceMatrix.needsUpdate = true; dropShadows.instanceMatrix.needsUpdate = true;
+    }
+
+    var EL = 0.21;
+    function fit(cam, fr, aspect) {
+      var t = Math.tan(cam.fov * Math.PI / 360);
+      var d = Math.max((fr[4] / 2) / t, (fr[3] / 2) / (t * aspect)) + 0.55;
+      cam.aspect = aspect;
+      cam.position.set(fr[0], fr[1] + Math.sin(EL) * d, fr[2] + Math.cos(EL) * d);
+      cam.lookAt(fr[0], fr[1], fr[2]);
+      cam.updateProjectionMatrix();
+    }
+
+    function setupCam(cam, fr, rect, ins) {
+      var W = rect.width, H = rect.height, w = Math.max(4, W - ins[1] - ins[3]), h = Math.max(4, H - ins[0] - ins[2]);
+      fit(cam, fr, w / h);
+      cam.setViewOffset(w, h, -ins[3], -ins[0], W, H);
+    }
+
+    /* scripted pour: lift, carry over the dish, form a drop, let it fall */
+    var activeTl = null, idleCall = null, curName = '', curSide = false;
+    function impact() { ripT = 0; S.pool.v = -0.32; S.dsk.v = 0.55; dirty = true; }
+    function dropTimeline(slow) {
+      var k = slow ? 1.8 : 1;
+      var tl = gsap.timeline();
+      tl.to(anim, { lift: 1, duration: 0.7, ease: 'power2.inOut' })
+        .to(anim, { over: 1, duration: 0.9, ease: 'power2.inOut' }, '-=0.12')
+        .to(anim, { lower: 1, duration: 0.45, ease: 'power2.out' })
+        .to(anim, { form: 1, duration: 0.85 * k, ease: 'power1.in' })
+        .to(anim, { fall: 1, duration: slow ? 1.7 : 0.42, ease: slow ? 'power1.in' : 'power2.in' })
+        .add(function () { ripSpeed = slow ? 0.42 : 1; impact(); })
+        .set(anim, { form: 0, fall: 0 })
+        .to(anim, { lower: 0, duration: 0.5, ease: 'power2.inOut' }, '+=' + (slow ? 0.9 : 0.35))
+        .to(anim, { over: 0, duration: 0.9, ease: 'power2.inOut' })
+        .to(anim, { lift: 0, duration: 0.7, ease: 'power2.inOut' }, '-=0.1');
+      return tl;
+    }
+    function playDrop(slow, done) {
+      if (!hasG) return;
+      if (activeTl && activeTl.isActive()) return;
+      if (activeTl) activeTl.kill();
+      activeTl = dropTimeline(slow);
+      if (done) activeTl.eventCallback('onComplete', done);
+    }
+    function settle() {
+      if (activeTl) { activeTl.kill(); activeTl = null; }
+      if (!hasG) { anim.lift = anim.over = anim.lower = anim.form = anim.fall = 0; return; }
+      anim.form = 0; anim.fall = 0;
+      gsap.to(anim, { lift: 0, over: 0, lower: 0, duration: 0.6, ease: 'power2.inOut', overwrite: true });
+    }
+    function stopIdle() { if (idleCall) { idleCall.kill(); idleCall = null; } }
+    function startIdle(delay) {
+      stopIdle();
+      if (reduce || !hasG) return;
+      idleCall = gsap.delayedCall(delay == null ? 0.7 : delay, function loop() {
+        idleCall = null;
+        if (curName !== 'hero') return;
+        playDrop(false, function () { if (curName === 'hero') idleCall = gsap.delayedCall(2.4, loop); });
+      });
+    }
+    var finalPlayed = false;
+    function setState(name, side) {
+      if (name === curName && side === curSide) return;
+      var prev = curName; curName = name; curSide = side;
+      if (!name) { stopIdle(); settle(); return; }
+      applyTargets(name, side);
+      if (name !== prev) {
+        stopIdle();
+        if (name === 'hero') { settle(); startIdle(0.8); }
+        else if (name === 'treat') { settle(); if (hasG) gsap.delayedCall(0.5, function () { if (curName === 'treat') playDrop(false); }); }
+        else if (name === 'final') {
+          settle();
+          if (!finalPlayed && !reduce && hasG) gsap.delayedCall(0.6, function () { if (curName === 'final') { finalPlayed = true; playDrop(true); } });
+        } else settle();
+      }
+    }
+
+    /* slots: each stage is a framed viewport inside the layout */
+    var slots = $$('[data-stage]').map(function (el) {
+      return { el: el, name: el.dataset.stage, inset: (el.dataset.inset || '12 12 48 12').split(' ').map(Number) };
+    });
+    var canvasH = 0, canvasW = 0;
+    function resize() {
+      canvasW = canvas.clientWidth; canvasH = canvas.clientHeight;
+      renderer.setSize(canvasW, canvasH, false);
+      dirty = true;
+    }
+    resize();
+
+    function pick() {
+      var top = navH(), bottom = window.innerHeight - bottomInset(), best = null, area = 0, vw = window.innerWidth;
+      for (var i = 0; i < slots.length; i++) {
+        var r = slots[i].el.getBoundingClientRect();
+        if (r.width < 2) continue;
+        var vis = Math.max(0, Math.min(r.bottom, bottom) - Math.max(r.top, top)) * Math.max(0, Math.min(r.right, vw) - Math.max(r.left, 0));
+        if (vis > area) { area = vis; best = { s: slots[i], r: r, top: top, bottom: bottom }; }
+      }
+      return best;
+    }
+
+    var lastSlot = null, lastKey = '', lastT = performance.now(), cleared = true, lost = false, shown = false;
+    var mouse = null;
+    function tick() {
+      if (lost) return;
+      var now = performance.now(), dt = Math.min(0.05, (now - lastT) / 1000); lastT = now;
+      var p = pick();
+      if (!p) {
+        if (!cleared) { renderer.setScissorTest(false); renderer.clear(); cleared = true; }
+        setState('', false); lastSlot = null; return;
+      }
+      var name = p.s.name, side = false;
+      if (name === 'steps') {
+        if (ext.turn < 0.995) { name = 'consult'; side = true; }
+        else name = STEP_STATES[clamp(ext.step, 0, 3)];
+      }
+      setState(name, side);
+      S.turn.t = ST[name].th * (p.s.name === 'steps' ? clamp(ext.turn, 0, 1) : 1);
+      if (p.s !== lastSlot) {
+        ['cx', 'cy', 'cz', 'cw', 'ch'].forEach(function (k) { S[k].x = S[k].t; S[k].v = 0; });
+        if (p.s.name !== 'steps') { S.turn.x = S.turn.t; S.turn.v = 0; }
+        lastSlot = p.s;
+      }
+      if (mouse) {
+        var r = p.r, nx = clamp((mouse[0] - (r.left + r.width / 2)) / (window.innerWidth * 0.5), -1, 1);
+        var ny = clamp((mouse[1] - (r.top + r.height / 2)) / (window.innerHeight * 0.5), -1, 1);
+        S.leanZ.t = -nx * 0.075; S.leanX.t = ny * 0.05;
+      }
+      var moving = stepSprings(dt);
+      var scripted = activeTl && activeTl.isActive();
+      var ripping = ripT < 2.4;
+      if (ripping) ripT += dt * ripSpeed;
+      var key = Math.round(p.r.left) + ',' + Math.round(p.r.top) + ',' + Math.round(p.r.width) + ',' + Math.round(p.r.height) + ',' + p.top + ',' + p.bottom;
+      if (moving || scripted || ripping || dirty || key !== lastKey || ext.pulse > 0 || gsap.isTweening && gsap.isTweening(anim)) {
+        apply(dt);
+        draw(p);
+        lastKey = key; dirty = false; cleared = false;
+        if (!shown) { shown = true; doc.classList.add('gl-on'); }
+      }
+    }
+
+    function draw(p) {
+      var r = p.r;
+      renderer.setScissorTest(false);
+      renderer.clear();
+      var sx0 = Math.max(r.left, 0), sx1 = Math.min(r.right, canvasW);
+      var sy0 = Math.max(r.top, p.top), sy1 = Math.min(r.bottom, p.bottom, canvasH);
+      if (sx1 <= sx0 || sy1 <= sy0 || r.width < 8 || r.height < 8) return;
+      renderer.setScissorTest(true);
+      renderer.setScissor(sx0, canvasH - sy1, sx1 - sx0, sy1 - sy0);
+      renderer.setViewport(r.left, canvasH - r.bottom, r.width, r.height);
+      setupCam(camera, [S.cx.x, S.cy.x, S.cz.x, S.cw.x, S.ch.x], r, p.s.inset);
+      renderer.render(scene, camera);
+    }
+
+    canvas.addEventListener('webglcontextlost', function (e) { e.preventDefault(); lost = true; doc.classList.remove('gl-on'); }, false);
+    canvas.addEventListener('webglcontextrestored', function () { lost = false; dirty = true; drawLabel(); }, false);
+
+    drawLabel();
+    if (document.fonts && document.fonts.load) {
+      Promise.all([document.fonts.load('400 100px Gloock'), document.fonts.load('600 25px "Albert Sans"'), document.fonts.load('500 34px "Albert Sans"')])
+        .then(drawLabel).catch(function () {});
+    }
+    if (hasG) gsap.ticker.add(tick);
+    else (function raf() { tick(); requestAnimationFrame(raf); })();
+
+    window.addEventListener('pointermove', function (e) {
+      if (e.pointerType !== 'mouse' || reduce) return;
+      mouse = [e.clientX, e.clientY];
+    }, { passive: true });
+
+    return {
+      ext: ext,
+      resize: resize,
+      wake: function () { dirty = true; },
+      setName: function (n) { nameNow = n; drawLabel(); },
+      drop: function (stageName) {
+        if (stageName === 'final') { if (curName === 'final') playDrop(true); return; }
+        if (curName === 'hero') { stopIdle(); playDrop(false, function () { startIdle(2.4); }); }
+      },
+      dragStart: function () { S.yaw.v = 0; },
+      dragMove: function (dx) { S.yaw.x = S.yaw.t = clamp(dx * 0.012, -2.4, 2.4); S.yaw.v = 0; dirty = true; },
+      dragEnd: function (vx) { S.yaw.t = 0; S.yaw.v = clamp(vx * 0.004, -6, 6); dirty = true; },
+      nudge: function (dir) { S.yaw.v += dir * 2.4; dirty = true; },
+      pulse: function () {
+        S.dsk.v = 1.1; dirty = true;
+        if (hasG) gsap.to(ext, { pulse: 1, duration: 0.25, yoyo: true, repeat: 1, ease: 'power1.inOut', onComplete: function () { ext.pulse = 0; } });
+      },
+      project: function (name, rect, inset) {
+        var st = ST[name], cam = camera.clone();
+        setupCam(cam, st.frame, rect, inset);
+        var v = new THREE.Vector3(st.d[0], 0.14, st.d[1]).project(cam);
+        return { x: rect.left + (v.x + 1) / 2 * rect.width, y: rect.top + (1 - v.y) / 2 * rect.height };
+      }
+    };
+  })();
+
+  /* =========================================================
+     Smooth scroll (vertical page only)
+     ========================================================= */
+  var lenis = null;
+  if (hasG && window.Lenis && !reduce) {
+    try {
+      lenis = new Lenis({ lerp: 0.11, smoothWheel: true });
+      lenis.on('scroll', ScrollTrigger.update);
+      gsap.ticker.add(function (t) { lenis.raf(t * 1000); });
+      gsap.ticker.lagSmoothing(0);
+    } catch (e) { lenis = null; }
+  }
+  if (!lenis && !reduce) doc.classList.add('smooth-native');
+  function scrollToY(y) {
+    if (lenis) lenis.scrollTo(y, { duration: 1.1 });
+    else window.scrollTo({ top: y, behavior: reduce ? 'auto' : 'smooth' });
+  }
+  function scrollToEl(el) {
+    var target = el.parentElement && el.parentElement.classList.contains('pin-spacer') ? el.parentElement : el;
+    var y = target.getBoundingClientRect().top + window.scrollY - navH() + 1;
+    scrollToY(y);
+  }
+  $$('a[href^="#"]').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      var id = a.getAttribute('href');
+      if (id.length < 2) return;
+      var t = document.getElementById(id.slice(1));
+      if (!t) return;
+      e.preventDefault();
+      scrollToEl(t);
+      if (id === '#book') setTimeout(function () { var f = $('#f-name'); if (f) f.focus({ preventScroll: true }); }, lenis ? 1150 : (reduce ? 50 : 700));
+    });
+  });
+
+  /* =========================================================
+     Stage controls: drag to turn, tap to release a drop
+     ========================================================= */
+  $$('.stage').forEach(function (stage) {
+    var st = null;
+    stage.addEventListener('pointerdown', function (e) {
+      if (e.target.closest('button') || e.button > 0) return;
+      st = { id: e.pointerId, x: e.clientX, moved: false, lx: e.clientX, lt: performance.now(), vx: 0 };
+      if (GL) GL.dragStart();
+    });
+    stage.addEventListener('pointermove', function (e) {
+      if (!st || e.pointerId !== st.id) return;
+      var dx = e.clientX - st.x;
+      if (!st.moved && Math.abs(dx) > 6) {
+        st.moved = true;
+        try { stage.setPointerCapture(e.pointerId); } catch (_) {}
+        stage.classList.add('is-dragging');
+      }
+      if (st.moved) {
+        var now = performance.now(), dtm = Math.max(8, now - st.lt);
+        st.vx = (e.clientX - st.lx) / dtm * 1000; st.lx = e.clientX; st.lt = now;
+        if (GL) GL.dragMove(dx);
+      }
+    });
+    var end = function (e) {
+      if (!st) return;
+      if (st.moved) { if (GL) GL.dragEnd(st.vx); }
+      else if (e.type === 'pointerup' && stage.hasAttribute('data-drop') && GL) GL.drop(stage.dataset.stage);
+      stage.classList.remove('is-dragging');
+      st = null;
+    };
+    stage.addEventListener('pointerup', end);
+    stage.addEventListener('pointercancel', end);
+    stage.addEventListener('keydown', function (e) {
+      if (!GL) return;
+      if (e.key === 'ArrowLeft') { GL.nudge(-1); e.preventDefault(); }
+      else if (e.key === 'ArrowRight') { GL.nudge(1); e.preventDefault(); }
+    });
+    var btn = $('[data-action="drop"]', stage);
+    if (btn) btn.addEventListener('click', function () { if (GL) GL.drop(stage.dataset.stage); });
+  });
+
+  /* =========================================================
+     Name preview: label on the bottle, plan doc, booking form
+     ========================================================= */
+  var nameInput = $('#name-input'), formName = $('#f-name'), synced = true;
+  if (nameInput) nameInput.addEventListener('input', function () {
+    var n = nameInput.value.replace(/\s+/g, ' ').trim().slice(0, 16);
+    $$('.js-name').forEach(function (el) { el.textContent = n || 'you'; });
+    if (GL) GL.setName(n);
+    if (formName && (synced || !formName.value)) { formName.value = n; synced = true; }
+  });
+  if (formName) formName.addEventListener('input', function () { synced = false; });
+
+  /* =========================================================
+     Steps chapter
+     ========================================================= */
+  var stepsSec = $('#how'), track = $('.steps-track'), win = $('.steps-window');
+  var panels = $$('.step-panel'), stepDots = $$('.js-step-dots button');
+  var stepNames = ['Consult', 'Plan', 'Treat', 'Review'];
+  var stepCaps = ['The label shows your name.', 'Three drops, three visits.', 'One measured drop into the dish.', 'The dish settles. We check in.'];
+  var curStep = -1, hTween = null;
+  function setStep(i) {
+    i = clamp(i, 0, 3);
+    if (i === curStep) return;
+    curStep = i;
+    $('.js-step-n').textContent = 'Step ' + (i + 1);
+    $('.js-step-name').textContent = stepNames[i];
+    $('.bar-fill', stepsSec).style.transform = 'scaleX(' + ((i + 1) / 4) + ')';
+    $('.js-step-cap').textContent = stepCaps[i];
+    stepDots.forEach(function (d, k) { d.setAttribute('aria-current', k === i ? 'true' : 'false'); });
+    $('.js-step-prev').disabled = i === 0;
+    $('.js-step-next').disabled = i === 3;
+    if (GL) GL.ext.step = reduce ? 0 : i;
+  }
+  var panelStep = function () { return panels.length > 1 ? panels[1].offsetLeft - panels[0].offsetLeft : 1; };
+  var hDist = function () { return Math.max(0, track.scrollWidth - (win.clientWidth - (parseFloat(getComputedStyle(win).paddingLeft) || 0))); };
+  var syncStep = function () { setStep(Math.round(-gsap.getProperty(track, 'x') / panelStep())); };
+  function goStep(i) {
+    i = clamp(i, 0, 3);
+    if (doc.classList.contains('h-mode') && hTween && hTween.scrollTrigger) {
+      var stt = hTween.scrollTrigger, p = Math.min(1, (i * panelStep()) / Math.max(1, hDist()));
+      scrollToY(stt.start + p * (stt.end - stt.start) + 2);
+    } else {
+      win.scrollTo({ left: panels[i].offsetLeft - panels[0].offsetLeft, behavior: reduce ? 'auto' : 'smooth' });
+    }
+  }
+  $('.js-step-prev').addEventListener('click', function () { goStep(curStep - 1); });
+  $('.js-step-next').addEventListener('click', function () { goStep(curStep + 1); });
+  stepDots.forEach(function (d, k) { d.addEventListener('click', function () { goStep(k); }); });
+  win.addEventListener('scroll', function () {
+    if (doc.classList.contains('h-mode') || reduce) return;
+    setStep(Math.round(win.scrollLeft / panelStep()));
+  }, { passive: true });
+  panels.forEach(function (p, k) {
+    p.addEventListener('focusin', function () {
+      if (doc.classList.contains('h-mode') && k !== curStep) { win.scrollLeft = 0; goStep(k); }
+    });
+  });
+  setStep(0);
+  if (GL && (reduce || !hasG)) GL.ext.turn = 1;
+
+  /* =========================================================
+     Proof cylinder
+     ========================================================= */
+  var cyl = $('.cyl'), ccards = $$('.ccard'), N = ccards.length, STEP = 360 / N, cylVp = $('.cyl-viewport');
+  var cylDots = $$('.js-cyl-dots button'), proofState = { scroll: 0, drag: 0 }, dragState = { v: 0 }, curCard = -1;
+  /* drag lives on its own object so killing a drag tween never touches the scroll-linked one */
+  var syncDrag = function () { proofState.drag = dragState.v; renderCyl(); };
+  function setCard(i) {
+    i = ((i % N) + N) % N;
+    if (i === curCard) return;
+    curCard = i;
+    $('.js-card-n').textContent = 'Card ' + (i + 1);
+    $('.js-cyl-bar').style.transform = 'scaleX(' + ((i + 1) / N) + ')';
+    cylDots.forEach(function (d, k) { d.setAttribute('aria-current', k === i ? 'true' : 'false'); });
+  }
+  function layoutCyl() {
+    if (!doc.classList.contains('h-mode')) return;
+    var h = cylVp.clientHeight, w = cylVp.clientWidth;
+    var cw = Math.round(Math.min(310, h * 0.74, w * 0.34)), ch = Math.round(Math.min(h - 16, cw * 1.36));
+    var R = Math.round((cw / 2) / Math.tan(Math.PI / N) + 26);
+    cyl.style.setProperty('--cw', cw + 'px'); cyl.style.setProperty('--ch', ch + 'px'); cyl.style.setProperty('--R', R + 'px');
+  }
+  function renderCyl() {
+    var rot = proofState.scroll + proofState.drag;
+    cyl.style.setProperty('--rot', rot.toFixed(2) + 'deg');
+    ccards.forEach(function (c, i) {
+      var a = (((i * STEP + rot) % 360) + 540) % 360 - 180;
+      var k = Math.cos(a * Math.PI / 180);
+      c.style.opacity = clamp(0.1 + 0.9 * k, 0, 1).toFixed(3);
+    });
+    setCard(Math.round(-rot / STEP));
+  }
+  function cylGo(delta) {
+    if (doc.classList.contains('h-mode')) {
+      var total = proofState.scroll + proofState.drag, snapped = Math.round(total / STEP) * STEP - delta * STEP;
+      if (hasG) gsap.to(dragState, { v: snapped - proofState.scroll, duration: 0.8, ease: 'power3.out', onUpdate: syncDrag, overwrite: true });
+    } else {
+      var i = clamp(curCard + delta, 0, N - 1);
+      cyl.scrollTo({ left: ccards[i].offsetLeft - ccards[0].offsetLeft, behavior: reduce ? 'auto' : 'smooth' });
+    }
+  }
+  $('.js-cyl-prev').addEventListener('click', function () { cylGo(-1); });
+  $('.js-cyl-next').addEventListener('click', function () { cylGo(1); });
+  cylDots.forEach(function (d, k) {
+    d.addEventListener('click', function () { cyl.scrollTo({ left: ccards[k].offsetLeft - ccards[0].offsetLeft, behavior: reduce ? 'auto' : 'smooth' }); });
+  });
+  cylVp.addEventListener('keydown', function (e) {
+    if (e.key === 'ArrowLeft') { cylGo(-1); e.preventDefault(); }
+    else if (e.key === 'ArrowRight') { cylGo(1); e.preventDefault(); }
+  });
+  cyl.addEventListener('scroll', function () {
+    if (doc.classList.contains('h-mode') || reduce) return;
+    var step = ccards.length > 1 ? ccards[1].offsetLeft - ccards[0].offsetLeft : 1;
+    setCard(Math.round(cyl.scrollLeft / step));
+  }, { passive: true });
+  (function () {
+    var dr = null;
+    cylVp.addEventListener('pointerdown', function (e) {
+      if (!doc.classList.contains('h-mode') || e.button > 0) return;
+      dr = { id: e.pointerId, x: e.clientX, d0: proofState.drag, lx: e.clientX, lt: performance.now(), vx: 0, moved: false };
+      if (hasG) gsap.killTweensOf(dragState);
+      dragState.v = proofState.drag;
+    });
+    cylVp.addEventListener('pointermove', function (e) {
+      if (!dr || e.pointerId !== dr.id) return;
+      var dx = e.clientX - dr.x;
+      if (!dr.moved && Math.abs(dx) > 5) { dr.moved = true; try { cylVp.setPointerCapture(e.pointerId); } catch (_) {} cylVp.classList.add('is-grabbing'); }
+      if (!dr.moved) return;
+      var now = performance.now(); dr.vx = (e.clientX - dr.lx) / Math.max(8, now - dr.lt) * 1000; dr.lx = e.clientX; dr.lt = now;
+      dragState.v = dr.d0 + dx * 0.26;
+      syncDrag();
+    });
+    var up = function () {
+      if (!dr) return;
+      if (dr.moved) {
+        var total = proofState.scroll + proofState.drag + clamp(dr.vx * 0.06, -90, 90);
+        var snapped = Math.round(total / STEP) * STEP;
+        if (hasG) gsap.to(dragState, { v: snapped - proofState.scroll, duration: 1.1, ease: 'elastic.out(1, 0.75)', onUpdate: syncDrag, overwrite: true });
+      }
+      cylVp.classList.remove('is-grabbing');
+      dr = null;
+    };
+    cylVp.addEventListener('pointerup', up);
+    cylVp.addEventListener('pointercancel', up);
+  })();
+  setCard(0);
+
+  /* =========================================================
+     Benefit cards: tilt with glare, flip
+     ========================================================= */
+  function addTilt(el, max) {
+    if (reduce) return;
+    el.addEventListener('pointermove', function (e) {
+      if (e.pointerType === 'touch') return;
+      var r = el.getBoundingClientRect(), px = (e.clientX - r.left) / r.width, py = (e.clientY - r.top) / r.height;
+      el.style.setProperty('--ry', ((px - 0.5) * max * 2).toFixed(2) + 'deg');
+      el.style.setProperty('--rx', ((0.5 - py) * max * 2).toFixed(2) + 'deg');
+      el.style.setProperty('--gx', (px * 100).toFixed(1) + '%');
+      el.style.setProperty('--gy', (py * 100).toFixed(1) + '%');
+      el.classList.add('is-tilting');
+    });
+    el.addEventListener('pointerleave', function () {
+      el.style.setProperty('--rx', '0deg'); el.style.setProperty('--ry', '0deg');
+      el.classList.remove('is-tilting');
+    });
+  }
+  function setFaces(card, flipped) {
+    var front = $('.front', card), back = $('.back', card);
+    front.setAttribute('aria-hidden', flipped ? 'true' : 'false');
+    back.setAttribute('aria-hidden', flipped ? 'false' : 'true');
+    front.inert = flipped; back.inert = !flipped;
+  }
+  $$('.bcard').forEach(function (card) {
+    addTilt(card, 7);
+    setFaces(card, false);
+    card.addEventListener('click', function (e) {
+      if (e.target.closest('a')) return;
+      var f = !card.classList.contains('is-flipped');
+      card.classList.toggle('is-flipped', f);
+      setFaces(card, f);
+      if (e.target.closest('.flip-btn')) {
+        var b = $((f ? '.back' : '.front') + ' .flip-btn', card);
+        setTimeout(function () { b.focus({ preventScroll: true }); }, 30);
+      }
+    });
+  });
+
+  /* =========================================================
+     Comparison divider
+     ========================================================= */
+  var split = $('.js-split'), handle = $('.js-split-handle'), splitV = 50;
+  function setSplit(v) {
+    splitV = clamp(v, 28, 72);
+    split.style.setProperty('--split', splitV.toFixed(2) + '%');
+    handle.setAttribute('aria-valuenow', String(Math.round(splitV)));
+    handle.setAttribute('aria-valuetext', splitV < 46 ? 'More room for the plan you take home' : splitV > 54 ? 'More room for package pressure' : 'Even split');
+    split.classList.toggle('lean-new', splitV < 46);
+  }
+  (function () {
+    var on = false;
+    handle.addEventListener('pointerdown', function (e) { on = true; try { handle.setPointerCapture(e.pointerId); } catch (_) {} e.preventDefault(); });
+    handle.addEventListener('pointermove', function (e) {
+      if (!on) return;
+      var r = split.getBoundingClientRect();
+      setSplit((e.clientX - r.left) / r.width * 100);
+    });
+    var stop = function () { on = false; };
+    handle.addEventListener('pointerup', stop); handle.addEventListener('pointercancel', stop);
+    handle.addEventListener('keydown', function (e) {
+      var d = { ArrowLeft: -4, ArrowDown: -4, ArrowRight: 4, ArrowUp: 4 }[e.key];
+      if (d) { setSplit(splitV + d); e.preventDefault(); }
+      else if (e.key === 'Home') { setSplit(28); e.preventDefault(); }
+      else if (e.key === 'End') { setSplit(72); e.preventDefault(); }
+    });
+  })();
+
+  /* =========================================================
+     Pricing: toggle flips every card
+     ========================================================= */
+  var priceCards = $$('.price-card'), priceMode = 'visit';
+  priceCards.forEach(function (c) { addTilt(c, 6); setFaces(c, false); });
+  $$('.js-price-toggle button').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var m = b.dataset.mode;
+      if (m === priceMode) return;
+      priceMode = m;
+      $$('.js-price-toggle button').forEach(function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+      $('.js-price-status').textContent = m === 'monthly' ? 'Showing monthly payment examples.' : 'Showing per-visit prices.';
+      var f = m === 'monthly';
+      priceCards.forEach(function (c, i) {
+        c.classList.toggle('is-flipped', f);
+        setFaces(c, f);
+        if (!reduce && hasG) gsap.to($('.pc-inner', c), { rotateY: f ? 180 : 0, duration: 0.95, delay: i * 0.08, ease: 'back.out(1.5)', overwrite: true });
+        else $('.pc-inner', c).style.transform = '';
+      });
+    });
+  });
+
+  /* =========================================================
+     FAQ accordion
+     ========================================================= */
+  $$('.acc-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var panel = document.getElementById(btn.getAttribute('aria-controls'));
+      var open = btn.getAttribute('aria-expanded') !== 'true';
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      if (reduce || !hasG) { panel.hidden = !open; return; }
+      if (open) {
+        panel.hidden = false;
+        gsap.fromTo(panel, { height: 0 }, { height: 'auto', duration: 0.5, ease: 'power3.out', overwrite: true, clearProps: 'height' });
+      } else {
+        gsap.to(panel, { height: 0, duration: 0.38, ease: 'power2.inOut', overwrite: true, onComplete: function () { panel.hidden = true; panel.style.height = ''; } });
+      }
+    });
+  });
+
+  /* =========================================================
+     Booking form
+     ========================================================= */
+  var form = $('#book-form');
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var name = $('#f-name'), contact = $('#f-contact'), ok = true;
+    var setErr = function (input, msg) {
+      input.setAttribute('aria-invalid', msg ? 'true' : 'false');
+      $('#' + input.id + '-err').textContent = msg;
+      if (msg && ok) { input.focus(); ok = false; }
+    };
+    setErr(name, name.value.trim() ? '' : 'Add your first name so the front desk knows who to ask for.');
+    var c = contact.value.trim();
+    var valid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(c) || c.replace(/[^\d]/g, '').length >= 10;
+    setErr(contact, valid ? '' : 'Add a phone number with area code, or an email address.');
+    if (!ok) return;
+    $('#form-result').textContent = 'Thanks, ' + name.value.trim() + '. On the live site this request goes to the Velour front desk, who call or email to confirm a time. This concept doesn’t send any data.';
+  });
+
+  /* =========================================================
+     Nav index + phone CTA bar
+     ========================================================= */
+  if ('IntersectionObserver' in window) {
+    var links = $$('.nav-links a');
+    var map = {};
+    links.forEach(function (a) { map[a.getAttribute('href').slice(1)] = a; });
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        var a = map[en.target.id];
+        if (!a) return;
+        if (en.isIntersecting) { links.forEach(function (l) { l.removeAttribute('aria-current'); }); a.setAttribute('aria-current', 'true'); }
+      });
+    }, { rootMargin: '-45% 0px -50% 0px' });
+    ['how', 'why', 'results', 'pricing', 'faq'].forEach(function (id) { var el = document.getElementById(id); if (el) io.observe(el); });
+    var io2 = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) { ctaBar.classList.toggle('is-hidden', en.isIntersecting); if (GL) GL.wake(); });
+    }, { threshold: 0.15 });
+    io2.observe(form);
+  }
+
+  /* =========================================================
+     Swatches for illustrated before/after cards
+     ========================================================= */
+  function rng(seed) { var s = seed; return function () { s = (s * 16807) % 2147483647; return s / 2147483647; }; }
+  $$('.sw').forEach(function (el, idx) {
+    var kind = el.dataset.sw, after = el.hasAttribute('data-after'), r = rng(Number(el.dataset.seed) || 7), id = 'sw' + idx;
+    var ink = '#8C5D50', out = '<svg viewBox="0 0 120 96" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><defs><linearGradient id="' + id + 'g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F0D8CA"/><stop offset="1" stop-color="#DDB7A5"/></linearGradient><radialGradient id="' + id + 'r"><stop offset="0" stop-color="' + ink + '"/><stop offset="1" stop-color="' + ink + '" stop-opacity="0"/></radialGradient></defs><rect width="120" height="96" fill="url(#' + id + 'g)"/>';
+    var i;
+    if (kind === 'lines') {
+      var n = after ? 2 : 4;
+      for (i = 0; i < n; i++) {
+        var y = after ? 34 + i * 26 : 24 + i * 15, a = 3 + r() * 3;
+        out += '<path d="M12 ' + y + ' Q 36 ' + (y - a) + ' 60 ' + y + ' T 108 ' + y + '" fill="none" stroke="' + ink + '" stroke-opacity="' + (after ? 0.14 : 0.42) + '" stroke-width="' + (after ? 1 : 1.7) + '" stroke-linecap="round"/>';
+      }
+    } else if (kind === 'hollow') {
+      out += '<path d="M20 40 Q60 22 100 40" fill="none" stroke="' + ink + '" stroke-opacity=".45" stroke-width="1.6" stroke-linecap="round"/>';
+      out += '<ellipse cx="60" cy="58" rx="40" ry="13" fill="url(#' + id + 'r)" opacity="' + (after ? 0.12 : 0.5) + '"/>';
+      out += '<path d="M28 54 Q60 ' + (after ? 60 : 68) + ' 92 54" fill="none" stroke="' + ink + '" stroke-opacity="' + (after ? 0.1 : 0.3) + '" stroke-width="1.3" stroke-linecap="round"/>';
+    } else if (kind === 'texture') {
+      var m = after ? 16 : 52;
+      for (i = 0; i < m; i++) out += '<circle cx="' + (6 + r() * 108).toFixed(1) + '" cy="' + (6 + r() * 84).toFixed(1) + '" r="' + (0.7 + r() * (after ? 0.8 : 1.6)).toFixed(2) + '" fill="' + ink + '" fill-opacity="' + (after ? 0.14 : 0.32) + '"/>';
+    } else {
+      var q = after ? 3 : 7;
+      for (i = 0; i < q; i++) out += '<circle cx="' + (14 + r() * 92).toFixed(1) + '" cy="' + (12 + r() * 72).toFixed(1) + '" r="' + (7 + r() * 11).toFixed(1) + '" fill="url(#' + id + 'r)" opacity="' + (after ? 0.14 : 0.42) + '"/>';
+    }
+    el.innerHTML = out + '</svg>';
+  });
+
+  /* =========================================================
+     Scroll choreography (GSAP)
+     ========================================================= */
+  var dealt = false, stacked = false, priced = false;
+  if (hasG) {
+    var mm = gsap.matchMedia();
+    mm.add({ h: '(min-width: 900px) and (min-height: 560px)', wide: '(min-width: 600px)' }, function (ctx) {
+      var H = ctx.conditions.h && !reduce, wide = ctx.conditions.wide && !reduce;
+      if (H) doc.classList.add('h-mode');
+      var cleanups = [];
+
+      /* problem: sticky stack peel */
+      if (!reduce) {
+        var items = $$('.stack-item');
+        items.forEach(function (it, i) {
+          var next = items[i + 1];
+          if (!next) return;
+          gsap.fromTo($('.pcard', it), { scale: 1, rotateX: 0, y: 0, '--shade': 0 }, {
+            scale: 0.9, rotateX: -7, y: -12, '--shade': 0.05, ease: 'none',
+            scrollTrigger: { trigger: next, start: 'top bottom', end: function () { return 'top ' + (navH() + 28 + (i + 1) * 18); }, scrub: true }
+          });
+        });
+      }
+
+      /* steps: corner turn, then sideways */
+      ScrollTrigger.create({
+        trigger: stepsSec, start: 'top bottom', end: function () { return 'top ' + navH(); },
+        onUpdate: function (s) { if (GL) GL.ext.turn = reduce ? 1 : s.progress; },
+        onLeave: function () { if (GL) GL.ext.turn = 1; },
+        onLeaveBack: function () { if (GL) GL.ext.turn = reduce ? 1 : 0; }
+      });
+      if (H) {
+        win.scrollLeft = 0;
+        hTween = gsap.to(track, {
+          x: function () { return -hDist(); }, ease: 'none', onUpdate: syncStep,
+          scrollTrigger: {
+            trigger: stepsSec, start: function () { return 'top ' + navH(); },
+            end: function () { return '+=' + Math.round(hDist() * 1.35 + 80); },
+            pin: true, scrub: 0.6, invalidateOnRefresh: true,
+            snap: {
+              snapTo: function (v) {
+                var d = Math.max(1, hDist()), best = 0, bd = 9;
+                for (var i = 0; i < panels.length; i++) { var q = Math.min(1, i * panelStep() / d); if (Math.abs(q - v) < bd) { bd = Math.abs(q - v); best = q; } }
+                return best;
+              },
+              duration: { min: 0.25, max: 0.7 }, delay: 0.12, ease: 'power2.inOut', inertia: false, directional: false
+            }
+          }
+        });
+        $$('.step-panel .reveal').forEach(function (el) {
+          if (el.closest('.step-panel') === panels[0]) return;
+          gsap.fromTo(el, { x: 70, opacity: 0.35 }, { x: 0, opacity: 1, ease: 'power2.out', scrollTrigger: { trigger: el, containerAnimation: hTween, start: 'left 96%', end: 'left 60%', scrub: true } });
+        });
+        cleanups.push(function () { hTween = null; gsap.set(track, { clearProps: 'transform' }); setStep(0); });
+      }
+
+      /* benefits: deal from the dish */
+      var slotsDeck = $$('.deck > li'), deck = $('.deck');
+      if (wide && !dealt) {
+        var dishPoint = function () {
+          var stg = $('.stage-deal'), r = stg.getBoundingClientRect(), ins = (stg.dataset.inset || '0 0 0 0').split(' ').map(Number);
+          return GL ? GL.project('deal', r, ins) : { x: r.left + r.width / 2, y: r.top + r.height * 0.62 };
+        };
+        var stackIn = function () {
+          if (stacked || dealt) return;
+          var p = dishPoint();
+          slotsDeck.forEach(function (li, i) {
+            var r = li.getBoundingClientRect();
+            gsap.set(li, { x: p.x - (r.left + r.width / 2), y: p.y - (r.top + r.height / 2), scale: 0.16, rotation: (i - 2.5) * 7, rotateX: 60, transformPerspective: 900 });
+          });
+          stacked = true;
+        };
+        var dealOut = function () {
+          if (dealt) return;
+          stackIn(); dealt = true;
+          if (GL) GL.pulse();
+          gsap.to(slotsDeck, { x: 0, y: 0, scale: 1, rotation: 0, rotateX: 0, duration: 1.1, ease: 'back.out(1.35)', stagger: 0.085, clearProps: 'transform' });
+        };
+        ScrollTrigger.create({ trigger: deck, start: 'top bottom', once: true, onEnter: stackIn });
+        ScrollTrigger.create({ trigger: deck, start: 'top 84%', once: true, onEnter: dealOut });
+      } else if (!reduce && !dealt) {
+        ScrollTrigger.create({
+          trigger: deck, start: 'top 92%', once: true,
+          onEnter: function () { dealt = true; gsap.from(slotsDeck, { y: 44, rotateX: -12, transformPerspective: 900, duration: 0.85, ease: 'back.out(1.6)', stagger: 0.08, clearProps: 'transform' }); }
+        });
+      }
+
+      /* proof: cylinder turns with scroll */
+      if (H) {
+        layoutCyl();
+        proofState.scroll = 0; proofState.drag = 0; dragState.v = 0;
+        renderCyl();
+        var cylTween = gsap.to(proofState, {
+          scroll: -(N - 1) * STEP, ease: 'none', onUpdate: renderCyl,
+          scrollTrigger: {
+            trigger: '#results', start: function () { return 'top ' + navH(); },
+            end: function () { return '+=' + Math.round(window.innerHeight * 1.9); },
+            pin: true, scrub: 0.7, invalidateOnRefresh: true, onRefresh: layoutCyl
+          }
+        });
+        cleanups.push(function () {
+          cylTween.kill();
+          ['--rot', '--cw', '--ch', '--R'].forEach(function (p) { cyl.style.removeProperty(p); });
+          ccards.forEach(function (c) { c.style.opacity = ''; });
+          curCard = -1; setCard(0);
+        });
+      }
+
+      /* comparison: one small nudge so the divider reads as movable */
+      if (!reduce) {
+        ScrollTrigger.create({
+          trigger: split, start: 'top 70%', once: true,
+          onEnter: function () {
+            var o = { v: 50 };
+            gsap.timeline().to(o, { v: 41, duration: 0.6, ease: 'power2.inOut', onUpdate: function () { setSplit(o.v); } })
+              .to(o, { v: 50, duration: 0.9, ease: 'elastic.out(1, 0.6)', onUpdate: function () { setSplit(o.v); } });
+          }
+        });
+      }
+
+      /* pricing: rise and settle */
+      if (!reduce && !priced) {
+        ScrollTrigger.create({
+          trigger: '.prices', start: 'top bottom', once: true,
+          onEnter: function () {
+            priced = true;
+            gsap.from(priceCards, { y: 110, rotateX: -32, transformPerspective: 1000, transformOrigin: '50% 100%', duration: 1.15, ease: 'back.out(1.6)', stagger: 0.1, clearProps: 'transform' });
+          }
+        });
+      }
+
+      return function () {
+        cleanups.forEach(function (f) { f(); });
+        doc.classList.remove('h-mode');
+      };
+    });
+    ScrollTrigger.sort();
+  }
+
+  /* =========================================================
+     Resize: ignore address-bar height wobble on phones
+     ========================================================= */
+  var lastW = window.innerWidth, lastH = window.innerHeight;
+  window.addEventListener('resize', function () {
+    var w = window.innerWidth, h = window.innerHeight;
+    if (w === lastW && Math.abs(h - lastH) < 160) return;
+    lastW = w; lastH = h;
+    if (GL) GL.resize();
+    layoutCyl();
+  });
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(function () { if (hasG) ScrollTrigger.refresh(); layoutCyl(); });
+  }
+})();
+</script>
+</body>
+</html>
